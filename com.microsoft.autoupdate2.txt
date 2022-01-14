@@ -1,0 +1,367 @@
+{
+	"title": "com.microsoft.autoupdate2",
+	"description": "Preference Domain: com.microsoft.autoupdate2,  Application: MAU",
+	"__version": "4.39",
+	"__feedback": "jmanifest@microsoft.com",
+	"type": "object",
+	"options": {
+		"remove_empty_properties": true
+	},
+	"properties": {
+		"AcknowledgedDataCollectionPolicy": {
+			"title": "Automatically acknowledge data collection policy",
+			"description": "Suppress the Required Data Collection policy dialog from being shown to users.",
+			"propertyOrder": 10,
+			"type": "string",
+			"default": "RequiredDataOnly",
+			"enum": ["RequiredDataOnly", "RequiredAndOptionalData"],
+			"options": {
+				"infoText": "Key: AcknowledgedDataCollectionPolicy",
+				"enum_titles": ["Acknowledge - send required data", "Acknowledge - send required and optional data"]
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://docs.microsoft.com/en-us/deployoffice/privacy/mac-privacy-preferences#preference-setting-for-the-required-data-notice-dialog-for-microsoft-autoupdate"
+			}]
+		},
+		"HowToCheck": {
+			"title": "Enable AutoUpdate",
+			"description": "Specifies whether AutoUpdate should download and install updates. This value should be true unless you need to temporarily halt all updates.",
+			"propertyOrder": 20,
+			"type": "string",
+			"default": "AutomaticDownload",
+			"enum": ["AutomaticDownload", "Manual"],
+			"options": {
+				"infoText": "Key: HowToCheck",
+				"enum_titles": ["true", "false"]
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://support.microsoft.com/office/update-office-for-mac-automatically-bfd1e497-c24d-4754-92ab-910a4074d7c1"
+			}]
+		},
+		"ChannelName": {
+			"title": "Update channel",
+			"description": "Specifies the channel to receive updates. The most stable channel is the Current Channel, which is recommended for the majority of your fleet. Users subscribed to the Preview Channel will receive production-quality updates a week before Current Channel users. Users subscribed to the Beta Channel will receive unsupported nightly builds that are designed for testing.",
+			"propertyOrder": 30,
+			"type": "string",
+			"default": "Current",
+			"enum": ["Current", "Preview", "Custom", "Beta"],
+			"options": {
+				"infoText": "Key: ChannelName",
+				"enum_titles": ["Current Channel", "Current Channel (Preview)", "Current Channel (Deferred)", "Beta Channel"]
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://support.microsoft.com/office/update-office-for-mac-automatically-bfd1e497-c24d-4754-92ab-910a4074d7c1"
+			}]
+		},
+		"ManifestServer": {
+			"title": "Deferred updates",
+			"description": "You can tell AutoUpdate to either a) wait for a number of days to pass before downloading updates from the Current Channel, or b) stop Office from advancing beyond a given version. Deferred updates only affects Word, Excel, PowerPoint, Outlook, and OneNote. Other applications such as Edge, Defender, and Company Portal will receive updates based on the regular Current Channel schedule.",
+			"propertyOrder": 40,
+			"type": "string",
+			"default": "https://officecdnmac.microsoft.com/pr/Defer.3/",
+			"enum": [
+				"https://officecdnmac.microsoft.com/pr/Defer.3/",
+				"https://officecdnmac.microsoft.com/pr/Defer.7/",
+				"https://officecdnmac.microsoft.com/pr/Defer.14/",
+				"https://officecdnmac.microsoft.com/pr/Defer.21/",
+				"https://officecdnmac.microsoft.com/pr/Defer.28/",
+				"https://officecdnmac.microsoft.com/pr/16.60.2204/",
+				"https://officecdnmac.microsoft.com/pr/16.59.2203/",
+				"https://officecdnmac.microsoft.com/pr/16.58.2202/",
+				"https://officecdnmac.microsoft.com/pr/16.57.2201/",
+				"https://officecdnmac.microsoft.com/pr/16.56.2112/",
+				"https://officecdnmac.microsoft.com/pr/16.55.2111/",
+				"https://officecdnmac.microsoft.com/pr/16.54.2110/",
+				"https://officecdnmac.microsoft.com/pr/16.53.2109/",
+				"https://officecdnmac.microsoft.com/pr/16.52.2108/",
+				"https://officecdnmac.microsoft.com/pr/16.51.2107/"
+				],
+			"options": {
+				"infoText": "Key: ManifestServer",
+				"enum_titles": [
+					"Defer 3 days",
+					"Defer 7 days",
+					"Defer 14 days",
+					"Defer 21 days",
+					"Defer 28 days",
+					"Pause at 16.60 (April 2022 Release)",
+					"Pause at 16.59 (March 2022 Release)",
+					"Pause at 16.58 (February 2022 Release)",
+					"Pause at 16.57 (January 2022 Release)",
+					"Pause at 16.56 (December 2021 Release)",
+					"Pause at 16.55 (November 2021 Release)",
+					"Pause at 16.54 (October 2021 Release)",
+					"Pause at 16.53 (September 2021 Release)",
+					"Pause at 16.52 (August 2021 Release)",
+					"Pause at 16.51 (July 2021 Release)"
+					],
+				"dependencies": {
+					"ChannelName": "Custom"
+				}
+			}
+		},
+		"UpdateCache": {
+			"title": "Update cache server",
+			"description": "Specify the HTTP(S) URL of the server that you use for cached package updates (PKG files). You must include a trailing forward slash.",
+			"propertyOrder": 50,
+			"type": "string",
+			"options": {
+				"infoText": "Key: UpdateCache",
+				"inputAttributes": {
+					"placeholder": "https://caching_server/folder/"
+				}
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://macadmins.software/docs/MAU_CachingServer.pdf"
+			}]
+		},
+		"DisableInsiderCheckbox": {
+			"title": "Disable Office Insider membership",
+			"description": "Prevent users from changing to an Office Insider channel and obtaining Preview or Beta updates. The default value is false.",
+			"propertyOrder": 60,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: DisableInsiderCheckbox"
+			}
+		},
+		"EnableCheckForUpdatesButton": {
+			"title": "Enable check for updates",
+			"description": "Allow users to check for app updates. The default value is true.",
+			"propertyOrder": 70,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: EnableCheckForUpdatesButton"
+			}
+		},
+		"UpdateDeadline.DaysBeforeForcedQuit": {
+			"title": "Days before forced updates",
+			"description": "Specify the maximum number of days that an update can be pending before the user is forced to update the app. Set the value to 0 to disable forced updates.",
+			"propertyOrder": 80,
+			"type": "integer",
+			"default": 0,
+			"options": {
+				"infoText": "Key: UpdateDeadline.DaysBeforeForcedQuit"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline"
+			}]
+		},
+		"ExtendedLogging": {
+			"title": "Enable extended logging",
+			"description": "Write verbose logging events to /Library/Logs/Microsoft/autoupdate.log",
+			"propertyOrder": 90,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: ExtendedLogging"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://macadmins.software/docs/MAU_38.pdf"
+			}]
+		},
+		"StartDaemonOnAppLaunch": {
+			"title": "Register app on launch",
+			"description": "Force Office apps to register with AutoUpdate on each launch.",
+			"propertyOrder": 100,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: StartDaemonOnAppLaunch"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://macadmins.software/docs/MAU_38.pdf"
+			}]
+		},
+		"UpdateCheckFrequency": {
+			"title": "Update check frequency (mins)",
+			"description": "Specify how often AutoUpdate checks for updates. The allowed range is 240 minutes (4 hours) - 720 minutes (12 hours).",
+			"propertyOrder": 110,
+			"type": "integer",
+			"default": 240,
+			"options": {
+				"infoText": "Key: UpdateCheckFrequency"
+			}
+		},
+		"ApplicationsSystem": {
+			"title": "Applications",
+			"propertyOrder": 120,
+			"description": "Forcibly register applications that should be managed by Microsoft AutoUpdate.",
+			"$ref": "#/definitions/applications"
+		}
+	},
+
+	"definitions": {
+		"applications": {
+			"title": "Applications",
+			"type": "object",
+			"properties": {
+				"/Applications/Microsoft Word.app": {
+					"title": "Microsoft Word",
+					"$ref": "#/definitions/application"
+				},
+				"/Applications/Microsoft Excel.app": {
+					"title": "Microsoft Excel",
+					"$ref": "#/definitions/application"
+				},
+				"/Applications/Microsoft PowerPoint.app": {
+					"title": "Microsoft PowerPoint",
+					"$ref": "#/definitions/application"
+				},
+				"/Applications/Microsoft Outlook.app": {
+					"title": "Microsoft Outlook",
+					"$ref": "#/definitions/application"
+				},
+				"/Applications/Microsoft OneNote.app": {
+					"title": "Microsoft OneNote",
+					"$ref": "#/definitions/application"
+				},
+				"/Library/Application Support/Microsoft/MAU2.0/Microsoft AutoUpdate.app": {
+					"title": "Microsoft AutoUpdate",
+					"$ref": "#/definitions/application"
+				},
+				"/Applications/OneDrive.app": {
+					"title": "Microsoft OneDrive",
+					"$ref": "#/definitions/application"
+				},
+				"/Applications/Company Portal.app": {
+					"title": "Company Portal",
+					"$ref": "#/definitions/application"
+				},
+				"/Applications/Microsoft Teams.app": {
+					"title": "Microsoft Teams",
+					"$ref": "#/definitions/application"
+				},
+				"/Applications/Skype for Business.app": {
+					"title": "Skype for Business",
+					"$ref": "#/definitions/application"
+				},
+				"/Applications/Microsoft Edge.app": {
+					"title": "Microsoft Edge",
+					"$ref": "#/definitions/application"
+				},
+				"/Applications/Microsoft Edge Beta.app": {
+					"title": "Microsoft Edge Beta",
+					"$ref": "#/definitions/application"
+				},
+				"/Applications/Microsoft Edge Canary.app": {
+					"title": "Microsoft Edge Canary",
+					"$ref": "#/definitions/application"
+				},
+				"/Applications/Microsoft Edge Dev.app": {
+					"title": "Microsoft Edge Dev",
+					"$ref": "#/definitions/application"
+				},
+				"/Applications/Microsoft Remote Desktop.app": {
+					"title": "Microsoft Remote Desktop",
+					"$ref": "#/definitions/application"
+				},
+				"/Applications/Microsoft Defender ATP.app": {
+					"title": "Microsoft Defender ATP",
+					"$ref": "#/definitions/application"
+				}
+			},
+			"default": {
+				"/Applications/Microsoft Word.app": {
+					"LCID": 1033,
+					"Application ID": "MSWD2019"
+				},
+				"/Applications/Microsoft Excel.app": {
+					"LCID": 1033,
+					"Application ID": "XCEL2019"
+				},
+				"/Applications/Microsoft PowerPoint.app": {
+					"LCID": 1033,
+					"Application ID": "PPT32019"
+				},
+				"/Applications/Microsoft Outlook.app": {
+					"LCID": 1033,
+					"Application ID": "OPIM2019"
+				},
+				"/Applications/Microsoft OneNote.app": {
+					"LCID": 1033,
+					"Application ID": "ONMC2019"
+				},
+				"/Library/Application Support/Microsoft/MAU2.0/Microsoft AutoUpdate.app": {
+					"LCID": 1033,
+					"Application ID": "MSau04"
+				},
+				"/Applications/OneDrive.app": {
+					"LCID": 1033,
+					"Application ID": "ONDR18"
+				},
+				"/Applications/Company Portal.app": {
+					"LCID": 1033,
+					"Application ID": "IMCP01"
+				},
+				"/Applications/Microsoft Teams.app": {
+					"LCID": 1033,
+					"Application ID": "TEAMS10"
+				},
+				"/Applications/Skype for Business.app": {
+					"LCID": 1033,
+					"Application ID": "MSFB16"
+				},
+				"/Applications/Microsoft Edge.app": {
+					"LCID": 1033,
+					"Application ID": "EDGE01"
+				},
+				"/Applications/Microsoft Edge Beta.app": {
+					"LCID": 1033,
+					"Application ID": "EDBT01"
+				},
+				"/Applications/Microsoft Edge Canary.app": {
+					"LCID": 1033,
+					"Application ID": "EDCN01"
+				},
+				"/Applications/Microsoft Edge Dev.app": {
+					"LCID": 1033,
+					"Application ID": "EDDV01"
+				},
+				"/Applications/Microsoft Remote Desktop.app": {
+					"LCID": 1033,
+					"Application ID": "MSRD10"
+				},
+				"/Applications/Microsoft Defender ATP.app": {
+					"LCID": 1033,
+					"Application ID": "WDAV00"
+				}
+			},
+
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/pbowden-msft/Payloads"
+			}]
+		},
+		"application": {
+			"type": "object",
+			"format": "grid",
+			"options": {
+				"collapsed": true,
+				"disable_properties": true
+			},
+			"properties": {
+				"Application ID": {
+					"type": "string",
+					"required": true
+				},
+				"LCID": {
+					"type": "integer",
+					"required": true,
+					"options": {
+						"hidden": true
+					}
+				}
+			}
+		}
+	},
+	"defaultProperties": ["AcknowledgedDataCollectionPolicy", "HowToCheck", "ChannelName", "ManifestServer", "StartDaemonOnAppLaunch", "UpdateCheckFrequency", "ApplicationsSystem"]
+}

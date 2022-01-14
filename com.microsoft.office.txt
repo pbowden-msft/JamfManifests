@@ -1,0 +1,234 @@
+{
+	"title": "com.microsoft.office",
+	"description": "Preference Domain: com.microsoft.office,  Application: Office 365/2019 Suite",
+	"__version": "1.3",
+	"__feedback": "jmanifest@microsoft.com",
+	"type": "object",
+	"options": {
+		"remove_empty_properties": true
+	},
+	"properties": {
+		"OfficeAutoSignIn": {
+			"title": "Enable automatic sign-in",
+			"description": "Suppress first run and welcome dialogs when launching apps.",
+			"propertyOrder": 10,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: OfficeAutoSignIn"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://aka.ms/outlookprefs"
+			}]
+		},
+		"DiagnosticDataTypePreference": {
+			"title": "Diagnostic data level",
+			"description": "Controls the amount of telemetry data sent by apps.",
+			"propertyOrder": 20,
+			"type": "string",
+			"enum": ["BasicDiagnosticData", "FullDiagnosticData", "ZeroDiagnosticData"],
+			"default": "FullDiagnosticData",
+			"options": {
+				"infoText": "Key: DiagnosticDataTypePreference",
+				"enum_titles": ["Required data only", "Required and Optional data", "Do not send data"]
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://aka.ms/macdiagpref"
+			}]
+		},
+		"ShowWhatsNewOnLaunch": {
+			"title": "Show Whats New dialog",
+			"description": "Show the monthly Whats New dialog to users.",
+			"propertyOrder": 30,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: ShowWhatsNewOnLaunch"
+			}
+		},
+		"ShowDocStageOnLaunch": {
+			"title": "Show Template Gallery on app launch",
+			"description": "Show the template picker when launching Word, Excel, and PowerPoint.",
+			"propertyOrder": 40,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: ShowDocStageOnLaunch"
+			}
+		},
+		"DefaultsToLocalOpenSave": {
+			"title": "Default to local files for open/save",
+			"description": "Prefer the local file system when accessing the Open and Save dialogs.",
+			"propertyOrder": 50,
+			"type": "boolean",
+			"default": false,
+			"options": {
+				"infoText": "Key: DefaultsToLocalOpenSave"
+			}
+		},
+		"OptionalConnectedExperiencesPreference": {
+			"title": "Allow optional connected experiences",
+			"description": "Allow usage of third-party data controller services. Note: All Outlook add-ins will be disabled if the value is set to false.",
+			"propertyOrder": 60,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: OptionalConnectedExperiencesPreference"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://aka.ms/macoce"
+			}]
+		},
+		"OfficeExperiencesAnalyzingContentPreference": {
+			"title": "Allow experiences and functionality that analyzes user content",
+			"description": "Examples: PowerPoint Designer, editing suggestions, Excel data insights.",
+			"propertyOrder": 70,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: OfficeExperiencesAnalyzingContentPreference"
+			},
+			"links": [{
+				"rel": "Help Link",
+				"href": "https://aka.ms/macoce"
+			}]
+		},
+		"OfficeExperiencesDownloadingContentPreference": {
+			"title": "Allow experiences and functionality that downloads user content",
+			"description": "Examples: Office document templates, online 3D models, online videos.",
+			"propertyOrder": 80,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: OfficeExperiencesDownloadingContentPreference"
+			},
+			"links": [{
+				"rel": "Help Link",
+				"href": "https://aka.ms/macoce"
+			}]
+		},
+		"DisableCloudFonts": {
+			"title": "Disable cloud fonts",
+			"description": "Prevent users from selecting and downloading cloud-based fonts.",
+			"propertyOrder": 90,
+			"type": "boolean",
+			"default": false,
+			"options": {
+				"infoText": "Key: DisableCloudFonts"
+			}
+		},
+		"NPSSurveyDisabled": {
+			"title": "Disable user surveys",
+			"description": "Prevent survey and feedback dialogs from being shown to users.",
+			"propertyOrder": 100,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: NPSSurveyDisabled"
+			}
+		},
+		"VisualBasicMacroExecutionState": {
+			"title": "Visual Basic macro policy",
+			"description": "Controls whether Visual Basic macros are allowed to execute in Word, Excel, and PowerPoint.",
+			"propertyOrder": 110,
+			"type": "string",
+			"default": "DisabledWithWarnings",
+			"enum": ["DisabledWithWarnings", "DisabledWithoutWarnings", "EnabledWithoutWarning"],
+			"options": {
+				"infoText": "Key: VisualBasicMacroExecutionState",
+				"enum_titles": ["Macros disabled by default, with warning to enable", "Disable all macros", "Always allow macros to run (potentially dangerous)"]
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://aka.ms/macvbpref"
+			}]
+		},
+		"VBAObjectModelIsTrusted": {
+			"title": "Allow macros to modify Visual Basic projects",
+			"description": "Allow Visual Basic macros to modify Visual Basic projects. Recommended: false.",
+			"propertyOrder": 120,
+			"type": "boolean",
+			"default": false,
+			"options": {
+				"infoText": "Key: VBAObjectModelIsTrusted"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://aka.ms/macvbpref"
+			}]
+		},
+		"AllowVisualBasicToBindToSystem": {
+			"title": "Allow Visual Basic macros to use system APIs",
+			"description": "Allow Visual Basic macros to use DECLARE to bind to the system() OS API. Recommended: false.",
+			"propertyOrder": 130,
+			"type": "boolean",
+			"default": false,
+			"options": {
+				"infoText": "Key: AllowVisualBasicToBindToSystem"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://aka.ms/macvbpref"
+			}]
+		},
+		"DisableVisualBasicExternalDylibs": {
+			"title": "Prevent Visual Basic macros from using external dynamic libraries",
+			"description": "Recommended: true, unless third-party add-ins and extensions are being used.",
+			"propertyOrder": 140,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: DisableVisualBasicExternalDylibs"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://aka.ms/macvbpref"
+			}]
+		},
+		"DisableVisualBasicToBindToPopen": {
+			"title": "Prevent Visual Basic macros from using pipes to communicate",
+			"description": "Recommended: true, unless third-party add-ins and extensions are being used.",
+			"propertyOrder": 150,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: DisableVisualBasicToBindToPopen"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://aka.ms/macvbpref"
+			}]
+		},
+		"DisableVisualBasicMacScript": {
+			"title": "Prevent Visual Basic macros from using legacy MacScript",
+			"description": "Recommended: true.",
+			"propertyOrder": 160,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: DisableVisualBasicMacScript"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://aka.ms/macvbpref"
+			}]
+		},
+		"VisualBasicEntirelyDisabled": {
+			"title": "Prevent all Visual Basic macros from executing",
+			"description": "Prevent all Visual Basic code from running in Word, Excel, and PowerPoint - even from trusted locations like the default template. Requires 16.32 or later. Recommended: true, where macros should never be used.",
+			"propertyOrder": 170,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: VisualBasicEntirelyDisabled"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://aka.ms/macvbpref"
+			}]
+		}
+	}
+}
