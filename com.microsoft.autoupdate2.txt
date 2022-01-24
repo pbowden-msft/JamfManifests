@@ -1,7 +1,7 @@
 {
 	"title": "com.microsoft.autoupdate2",
 	"description": "Preference Domain: com.microsoft.autoupdate2,  Application: MAU",
-	"__version": "4.39",
+	"__version": "4.43",
 	"__feedback": "jmanifest@microsoft.com",
 	"type": "object",
 	"options": {
@@ -68,6 +68,11 @@
 				"https://officecdnmac.microsoft.com/pr/Defer.14/",
 				"https://officecdnmac.microsoft.com/pr/Defer.21/",
 				"https://officecdnmac.microsoft.com/pr/Defer.28/",
+				"https://officecdnmac.microsoft.com/pr/Defer.45/",
+				"https://officecdnmac.microsoft.com/pr/16.64.2208/",
+				"https://officecdnmac.microsoft.com/pr/16.63.2207/",
+				"https://officecdnmac.microsoft.com/pr/16.62.2206/",
+				"https://officecdnmac.microsoft.com/pr/16.61.2205/",
 				"https://officecdnmac.microsoft.com/pr/16.60.2204/",
 				"https://officecdnmac.microsoft.com/pr/16.59.2203/",
 				"https://officecdnmac.microsoft.com/pr/16.58.2202/",
@@ -87,6 +92,11 @@
 					"Defer 14 days",
 					"Defer 21 days",
 					"Defer 28 days",
+					"Defer 45 days",
+					"Pause at 16.64 (August 2022 Release)",
+					"Pause at 16.63 (July 2022 Release)",
+					"Pause at 16.62 (June 2022 Release)",
+					"Pause at 16.61 (May 2022 Release)",
 					"Pause at 16.60 (April 2022 Release)",
 					"Pause at 16.59 (March 2022 Release)",
 					"Pause at 16.58 (February 2022 Release)",
@@ -189,6 +199,18 @@
 			"default": 240,
 			"options": {
 				"infoText": "Key: UpdateCheckFrequency"
+			}
+		},
+		"UpdaterOptimization": {
+			"title": "Updater optimization technique",
+			"description": "By default AutoUpdate will optimize for smaller packages on the network. However, this can cause larger CPU overheads when security agents (e.g. CrowdStrike) are installed. Alternatively, you can choose to lower the CPU overheads to process updates but accept larger download packages",
+			"propertyOrder": 112,
+			"type": "string",
+			"default": "Network",
+			"enum": ["Network", "CPU"],
+			"options": {
+				"infoText": "Key: UpdaterOptimization",
+				"enum_titles": ["Lower network overhead", "Lower processor overhead"]
 			}
 		},
 		"ApplicationsSystem": {
