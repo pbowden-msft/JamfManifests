@@ -1,7 +1,7 @@
 {
 	"title": "com.microsoft.office",
-	"description": "Preference Domain: com.microsoft.office,  Application: Office 365/2019 Suite",
-	"__version": "1.3",
+	"description": "Preference Domain: com.microsoft.office,  Application: Office 365/2021/2019 Suite",
+	"__version": "16.57",
 	"__feedback": "jmanifest@microsoft.com",
 	"type": "object",
 	"options": {
@@ -110,10 +110,32 @@
 				"href": "https://aka.ms/macoce"
 			}]
 		},
+		"EnableBackgroundAccessibilityChecker": {
+			"title": "Background accessibility checking",
+			"description": "The background accessibility checker automatically helps find and fix content in documents that may make it harder for people with disabilities to consume.",
+			"propertyOrder": 90,
+			"type": "boolean",
+			"enum": [true, false],
+			"default": true,
+			"options": {
+				"infoText": "Key: EnableBackgroundAccessibilityChecker",
+				"enum_titles": ["on", "off"]
+			}
+		},
+		"OfficeWebAddinDisableOMEXCatalog": {
+			"title": "Disable third-party store add-in catalog",
+			"description": "Prevent users from accessing and downloading third-party add-ins from the Microsoft store (affects Word, Excel, and PowerPoint).",
+			"propertyOrder": 100,
+			"type": "boolean",
+			"default": false,
+			"options": {
+				"infoText": "Key: OfficeWebAddinDisableOMEXCatalog"
+			}
+		},
 		"DisableCloudFonts": {
 			"title": "Disable cloud fonts",
 			"description": "Prevent users from selecting and downloading cloud-based fonts.",
-			"propertyOrder": 90,
+			"propertyOrder": 110,
 			"type": "boolean",
 			"default": false,
 			"options": {
@@ -123,7 +145,7 @@
 		"NPSSurveyDisabled": {
 			"title": "Disable user surveys",
 			"description": "Prevent survey and feedback dialogs from being shown to users.",
-			"propertyOrder": 100,
+			"propertyOrder": 120,
 			"type": "boolean",
 			"default": true,
 			"options": {
@@ -133,7 +155,7 @@
 		"VisualBasicMacroExecutionState": {
 			"title": "Visual Basic macro policy",
 			"description": "Controls whether Visual Basic macros are allowed to execute in Word, Excel, and PowerPoint.",
-			"propertyOrder": 110,
+			"propertyOrder": 130,
 			"type": "string",
 			"default": "DisabledWithWarnings",
 			"enum": ["DisabledWithWarnings", "DisabledWithoutWarnings", "EnabledWithoutWarning"],
@@ -149,7 +171,7 @@
 		"VBAObjectModelIsTrusted": {
 			"title": "Allow macros to modify Visual Basic projects",
 			"description": "Allow Visual Basic macros to modify Visual Basic projects. Recommended: false.",
-			"propertyOrder": 120,
+			"propertyOrder": 140,
 			"type": "boolean",
 			"default": false,
 			"options": {
@@ -163,7 +185,7 @@
 		"AllowVisualBasicToBindToSystem": {
 			"title": "Allow Visual Basic macros to use system APIs",
 			"description": "Allow Visual Basic macros to use DECLARE to bind to the system() OS API. Recommended: false.",
-			"propertyOrder": 130,
+			"propertyOrder": 150,
 			"type": "boolean",
 			"default": false,
 			"options": {
@@ -177,7 +199,7 @@
 		"DisableVisualBasicExternalDylibs": {
 			"title": "Prevent Visual Basic macros from using external dynamic libraries",
 			"description": "Recommended: true, unless third-party add-ins and extensions are being used.",
-			"propertyOrder": 140,
+			"propertyOrder": 160,
 			"type": "boolean",
 			"default": true,
 			"options": {
@@ -191,7 +213,7 @@
 		"DisableVisualBasicToBindToPopen": {
 			"title": "Prevent Visual Basic macros from using pipes to communicate",
 			"description": "Recommended: true, unless third-party add-ins and extensions are being used.",
-			"propertyOrder": 150,
+			"propertyOrder": 170,
 			"type": "boolean",
 			"default": true,
 			"options": {
@@ -205,7 +227,7 @@
 		"DisableVisualBasicMacScript": {
 			"title": "Prevent Visual Basic macros from using legacy MacScript",
 			"description": "Recommended: true.",
-			"propertyOrder": 160,
+			"propertyOrder": 180,
 			"type": "boolean",
 			"default": true,
 			"options": {
@@ -219,7 +241,7 @@
 		"VisualBasicEntirelyDisabled": {
 			"title": "Prevent all Visual Basic macros from executing",
 			"description": "Prevent all Visual Basic code from running in Word, Excel, and PowerPoint - even from trusted locations like the default template. Requires 16.32 or later. Recommended: true, where macros should never be used.",
-			"propertyOrder": 170,
+			"propertyOrder": 190,
 			"type": "boolean",
 			"default": true,
 			"options": {

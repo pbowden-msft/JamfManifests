@@ -1,17 +1,33 @@
 {
 	"title": "com.microsoft.Outlook",
 	"description": "Preference Domain: com.microsoft.Outlook,  Application: Outlook",
-	"__version": "1.3",
+	"__version": "16.57",
 	"__feedback": "jmanifest@microsoft.com",
 	"type": "object",
 	"options": {
 		"remove_empty_properties": true
 	},
 	"properties": {
+		"EnableNewOutlook": {
+			"title": "Enable New Outlook",
+			"description": "Specify whether users should be allowed to switch between Classic and New Outlook.",
+			"propertyOrder": 10,
+			"type": "integer",
+			"enum": [0, 1, 2, 3],
+			"default": 1,
+			"options": {
+				"infoText": "Key: EnableNewOutlook",
+				"enum_titles": ["Classic Outlook only", "Default to Classic Outlook. Users may switch to New Outlook", "Default to New Outlook. Users may revert to Classic Outlook", "New Outlook only"]
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#enable-new-outlook"
+			}]
+		},
 		"AllowedEmailDomains": {
 			"title": "Allowed Email Domains",
-			"description": "Specify a regular expression of email domains that are allowed to be added to the Outlook profile (e.g. contoso\\\\.com$)",
-			"propertyOrder": 10,
+			"description": "Specify a list of email domains that are allowed to be added to the Outlook profile (e.g. contoso.com). Subdomains will be automatically included (e.g. specifying contoso.com will also allow foo.contoso.com).",
+			"propertyOrder": 20,
 			"type": "array",
 			"options": {
 				"infoText": "Key: AllowedEmailDomains"
@@ -20,34 +36,66 @@
 				"type": "string",
 				"title": "Email Domain",
 				"options": {
+					"infoText": "Key: AllowedEmailDomains",
 					"inputAttributes": {
-						"placeholder": "contoso\\\\.com$"
+						"placeholder": "contoso.com"
 					}
 				}
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://aka.ms/outlookprefs"
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#allow-only-corporate-mailboxes-to-be-added"
 			}]
 		},
-		"HideFoldersOnMyComputerRootInFolderList": {
-			"title": "Hide On My Computer folders",
-			"description": "",
-			"propertyOrder": 20,
-			"type": "boolean",
-			"default": true,
+		"DefaultEmailAddressOrDomain": {
+			"title": "Default domain name",
+			"description": "Specify the domain or full email address of the Microsoft 365 mailbox to be added on first launch (e.g. contoso.com or fred@contoso.com).",
+			"propertyOrder": 30,
+			"type": "string",
 			"options": {
-				"infoText": "Key: HideFoldersOnMyComputerRootInFolderList"
+				"infoText": "Key: DefaultEmailAddressOrDomain",
+				"remove_empty_properties": true,
+				"inputAttributes": {
+					"placeholder": "contoso.com"
+				}
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://aka.ms/outlookprefs"
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#specify-microsoft-365-mailbox-to-be-added-on-first-launch"
+			}]
+		},
+		"PhoenixOnboardingFlowFRELaunched": {
+			"title": "Hide the 'Personalize the new Outlook' dialog",
+			"description": "Suppress the welcome dialog that appears when users switch to New Outlook.",
+			"propertyOrder": 40,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: PhoenixOnboardingFlowFRELaunched"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook"
+			}]
+		},
+		"UserPreference_maxCheckListDisplayDurationMet": {
+			"title": "Hide the 'Get started with Outlook' control in the task pane",
+			"description": "Suppress the task pane control that advertises access to toolbar customization, notification preferences, theme, and adding secondary accounts.",
+			"propertyOrder": 50,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: UserPreference_maxCheckListDisplayDurationMet"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook"
 			}]
 		},
 		"TrustO365AutodiscoverRedirect": {
 			"title": "Trust Office 365 autodiscover redirects",
 			"description": "When true, users will not see a dialog if autodiscover redirects the client to a different server. Recommended: true.",
-			"propertyOrder": 30,
+			"propertyOrder": 60,
 			"type": "boolean",
 			"default": true,
 			"options": {
@@ -55,23 +103,147 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://aka.ms/outlookprefs"
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook"
 			}]
 		},
 		"SuppressO365AutodiscoverOverride": {
 			"title": "Use domain-based autodiscover instead of Office 365",
-			"description": "When true, autodiscover will contact the endpoint for the mailbox domain instead of the Office 365 service.",
-			"propertyOrder": 40,
+			"description": "When true, autodiscover will contact the endpoint for the mailbox domain instead of the Office 365 service. This is recommended for on-premises Exchange mailboxes.",
+			"propertyOrder": 70,
 			"type": "boolean",
 			"default": false,
 			"options": {
 				"infoText": "Key: SuppressO365AutodiscoverOverride"
-			}
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook"
+			}]
+		},
+		"HideFoldersOnMyComputerRootInFolderList": {
+			"title": "Hide On My Computer folders",
+			"description": "Disable local folder storage.",
+			"propertyOrder": 80,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: HideFoldersOnMyComputerRootInFolderList"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#hide-local-folders"
+			}]
+		},
+		"DisableImport": {
+			"title": "Disable import from OLM and PST files",
+			"description": "Prevent users importing data from the local file system.",
+			"propertyOrder": 90,
+			"type": "boolean",
+			"default": false,
+			"options": {
+				"infoText": "Key: DisableImport"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#disable-import"
+			}]
+		},
+		"DisableExport": {
+			"title": "Disable export to OLM files",
+			"description": "Prevent users exporting data to the local file system.",
+			"propertyOrder": 100,
+			"type": "boolean",
+			"default": false,
+			"options": {
+				"infoText": "Key: DisableExport"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#disable-export"
+			}]
+		},
+		"DisableEncryptOnly": {
+			"title": "Disable Microsoft 365 encryption options",
+			"description": "Prevent users from applying the Encrypt-Only option to emails when using Microsoft 365 Message Encryption.",
+			"propertyOrder": 110,
+			"type": "boolean",
+			"default": false,
+			"options": {
+				"infoText": "Key: DisableEncryptOnly"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#disable-encrypt-only"
+			}]
+		},
+		"DisableDoNotForward": {
+			"title": "Disable 'Do Not Forward' options",
+			"description": "Prevent users from applying the Do Not Forward option to emails when using Microsoft 365 Message Encryption.",
+			"propertyOrder": 120,
+			"type": "boolean",
+			"default": false,
+			"options": {
+				"infoText": "Key: DisableDoNotForward"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#disable-do-not-forward"
+			}]
+		},
+		"DisableSMIMECompose": {
+			"title": "Disable S/MIME",
+			"description": "Prevent users from applying S/MIME option to email messages.",
+			"propertyOrder": 130,
+			"type": "boolean",
+			"default": false,
+			"options": {
+				"infoText": "Key: DisableSMIMECompose"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#disable-smime"
+			}]
+		},
+		"AllowCertsWithoutMatchingEmailAddress": {
+			"title": "Allow S/MIME certificates without a matching email address",
+			"description": "Allow users to decrypt and encrypt S/MIME messages when the S/MIME certificate does not match the email address.",
+			"propertyOrder": 140,
+			"type": "boolean",
+			"default": false,
+			"options": {
+				"infoText": "Key: AllowCertsWithoutMatchingEmailAddress"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#allow-smime-certificates-without-a-matching-email-address"
+			}]
+		},
+		"SMIMECertificatesLookupOrder": {
+			"title": "Set the order in which S/MIME certificates are considered",
+			"description": "Set the order in which certificates will be used to decrypt and encrypt S/MIME messages.",
+			"propertyOrder": 150,
+			"type": "array",
+			"options": {
+				"infoText": "Key: SMIMECertificatesLookupOrder"
+			},
+			"items": {
+				"type": "integer",
+				"title": "Index",
+				"enum": [0, 1, 2, 3],
+				"options": {
+					"infoText": "Key: SMIMECertificatesLookupOrder",
+					"enum_titles": ["Contacts", "Global Address List", "Device", "LDAP"]
+				}
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#set-the-order-in-which-smime-certificates-are-considered"
+			}]
 		},
 		"AutomaticallyDownloadExternalContent": {
 			"title": "Download embedded images",
-			"description": "",
-			"propertyOrder": 50,
+			"description": "Automatically downloading images will provide users with a better messaging experience. However, be aware of the privacy considerations if you are enabling this setting.",
+			"propertyOrder": 160,
 			"type": "integer",
 			"enum": [0, 1, 2],
 			"default": 1,
@@ -81,41 +253,13 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://aka.ms/outlookprefs"
-			}]
-		},
-		"DisableImport": {
-			"title": "Disable import from OLM and PST files",
-			"description": "",
-			"propertyOrder": 60,
-			"type": "boolean",
-			"default": false,
-			"options": {
-				"infoText": "Key: DisableImport"
-			},
-			"links": [{
-				"rel": "More information",
-				"href": "https://aka.ms/outlookprefs"
-			}]
-		},
-		"DisableExport": {
-			"title": "Disable export to OLM files",
-			"description": "",
-			"propertyOrder": 70,
-			"type": "boolean",
-			"default": false,
-			"options": {
-				"infoText": "Key: DisableExport"
-			},
-			"links": [{
-				"rel": "More information",
-				"href": "https://aka.ms/outlookprefs"
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#specify-when-pictures-are-downloaded-for-email"
 			}]
 		},
 		"DisableSignatures": {
 			"title": "Disable email signatures",
-			"description": "",
-			"propertyOrder": 80,
+			"description": "Prevent users from adding, removing, and editing signatures",
+			"propertyOrder": 170,
 			"type": "boolean",
 			"default": false,
 			"options": {
@@ -123,13 +267,43 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://aka.ms/outlookprefs"
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#disable-signatures"
+			}]
+		},
+		"OLDisableJunkOptionsPrefKey": {
+			"title": "Disable Junk settings",
+			"description": "Prevent users from applying Junk options to emails.",
+			"propertyOrder": 180,
+			"type": "boolean",
+			"default": false,
+			"options": {
+				"infoText": "Key: OLDisableJunkOptionsPrefKey"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#disable-junk-settings"
+			}]
+		},
+		"UserPreference_AppTheming": {
+			"title": "Set theme",
+			"description": "Set the theme color.",
+			"propertyOrder": 190,
+			"type": "integer",
+			"enum": [0, 1, 2, 3, 4, 5],
+			"default": 0,
+			"options": {
+				"infoText": "Key: UserPreference_AppTheming",
+				"enum_titles": ["Blue", "Purple", "Pink", "Orange", "Red", "Green"]
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook"
 			}]
 		},
 		"DefaultWeatherLocation": {
 			"title": "Default weather location",
 			"description": "Sets the default weather location in the Calendar view. Enter the city and state or country (e.g. Redmond, WA or Paris, France)",
-			"propertyOrder": 90,
+			"propertyOrder": 200,
 			"type": "string",
 			"options": {
 				"infoText": "Key: DefaultWeatherLocation",
@@ -140,13 +314,43 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://aka.ms/outlookprefs"
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#specify-default-weather-location"
+			}]
+		},
+		"Weather_update_automatically": {
+			"title": "Disable automatic updating of weather location",
+			"description": "Prevent users from choosing Update Location Automatically for weather location.",
+			"propertyOrder": 210,
+			"type": "boolean",
+			"default": false,
+			"options": {
+				"infoText": "Key: Weather_update_automatically"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#disable-automatic-updating-of-weather-location"
+			}]
+		},
+		"CalendarFirstDayOfWeek": {
+			"title": "Specify first day of the week",
+			"description": "Set the first day of week in calendar view.",
+			"propertyOrder": 220,
+			"type": "integer",
+			"enum": [1, 2, 3, 4, 5, 6, 7],
+			"default": 1,
+			"options": {
+				"infoText": "Key: CalendarFirstDayOfWeek",
+				"enum_titles": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#specify-calendar-first-day-of-week"
 			}]
 		},
 		"DisableTeamsMeeting": {
 			"title": "Disable Microsoft Teams meeting support",
-			"description": "",
-			"propertyOrder": 100,
+			"description": "Prevent users from adding Teams to meeting invites.",
+			"propertyOrder": 230,
 			"type": "boolean",
 			"default": false,
 			"options": {
@@ -154,13 +358,13 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://aka.ms/outlookprefs"
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#disable-teams-online-meetings"
 			}]
 		},
 		"DisableSkypeMeeting": {
 			"title": "Disable Skype for Business meeting support",
-			"description": "",
-			"propertyOrder": 110,
+			"description": "Prevent users from adding Skype for Business to meeting invites.",
+			"propertyOrder": 240,
 			"type": "boolean",
 			"default": false,
 			"options": {
@@ -168,8 +372,9 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://aka.ms/outlookprefs"
+				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#disable-skype-for-business-online-meetings"
 			}]
 		}
-	}
+	},
+	"defaultProperties": ["EnableNewOutlook", "AllowedEmailDomains", "DefaultEmailAddressOrDomain", "PhoenixOnboardingFlowFRELaunched", "UserPreference_maxCheckListDisplayDurationMet", "TrustO365AutodiscoverRedirect", "DisableImport", "DisableExport", "DisableEncryptOnly", "DisableDoNotForward", "DisableSMIMECompose", "DefaultWeatherLocation", "DisableTeamsMeeting"]
 }

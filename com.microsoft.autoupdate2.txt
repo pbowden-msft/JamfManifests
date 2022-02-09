@@ -289,6 +289,10 @@
 				"/Applications/Microsoft Defender ATP.app": {
 					"title": "Microsoft Defender ATP",
 					"$ref": "#/definitions/application"
+				},
+				"/Applications/Microsoft Defender.app": {
+					"title": "Microsoft Defender",
+					"$ref": "#/definitions/application"
 				}
 			},
 			"default": {
@@ -353,6 +357,10 @@
 					"Application ID": "MSRD10"
 				},
 				"/Applications/Microsoft Defender ATP.app": {
+					"LCID": 1033,
+					"Application ID": "WDAV00"
+				},
+				"/Applications/Microsoft Defender.app": {
 					"LCID": 1033,
 					"Application ID": "WDAV00"
 				}
