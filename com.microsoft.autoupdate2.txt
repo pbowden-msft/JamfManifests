@@ -1,7 +1,7 @@
 {
 	"title": "com.microsoft.autoupdate2",
 	"description": "Preference Domain: com.microsoft.autoupdate2,  Application: MAU",
-	"__version": "4.43",
+	"__version": "4.48",
 	"__feedback": "jmanifest@microsoft.com",
 	"type": "object",
 	"options": {
@@ -69,6 +69,10 @@
 				"https://officecdnmac.microsoft.com/pr/Defer.21/",
 				"https://officecdnmac.microsoft.com/pr/Defer.28/",
 				"https://officecdnmac.microsoft.com/pr/Defer.45/",
+				"https://officecdnmac.microsoft.com/pr/16.68.2212/",
+				"https://officecdnmac.microsoft.com/pr/16.67.2211/",
+				"https://officecdnmac.microsoft.com/pr/16.66.2210/",
+				"https://officecdnmac.microsoft.com/pr/16.65.2209/",
 				"https://officecdnmac.microsoft.com/pr/16.64.2208/",
 				"https://officecdnmac.microsoft.com/pr/16.63.2207/",
 				"https://officecdnmac.microsoft.com/pr/16.62.2206/",
@@ -76,13 +80,7 @@
 				"https://officecdnmac.microsoft.com/pr/16.60.2204/",
 				"https://officecdnmac.microsoft.com/pr/16.59.2203/",
 				"https://officecdnmac.microsoft.com/pr/16.58.2202/",
-				"https://officecdnmac.microsoft.com/pr/16.57.2201/",
-				"https://officecdnmac.microsoft.com/pr/16.56.2112/",
-				"https://officecdnmac.microsoft.com/pr/16.55.2111/",
-				"https://officecdnmac.microsoft.com/pr/16.54.2110/",
-				"https://officecdnmac.microsoft.com/pr/16.53.2109/",
-				"https://officecdnmac.microsoft.com/pr/16.52.2108/",
-				"https://officecdnmac.microsoft.com/pr/16.51.2107/"
+				"https://officecdnmac.microsoft.com/pr/16.57.2201/"
 				],
 			"options": {
 				"infoText": "Key: ManifestServer",
@@ -93,6 +91,10 @@
 					"Defer 21 days",
 					"Defer 28 days",
 					"Defer 45 days",
+					"Pause at 16.68 (December 2022 Release)",
+					"Pause at 16.67 (November 2022 Release)",
+					"Pause at 16.66 (October 2022 Release)",
+					"Pause at 16.65 (September 2022 Release)",
 					"Pause at 16.64 (August 2022 Release)",
 					"Pause at 16.63 (July 2022 Release)",
 					"Pause at 16.62 (June 2022 Release)",
@@ -100,13 +102,7 @@
 					"Pause at 16.60 (April 2022 Release)",
 					"Pause at 16.59 (March 2022 Release)",
 					"Pause at 16.58 (February 2022 Release)",
-					"Pause at 16.57 (January 2022 Release)",
-					"Pause at 16.56 (December 2021 Release)",
-					"Pause at 16.55 (November 2021 Release)",
-					"Pause at 16.54 (October 2021 Release)",
-					"Pause at 16.53 (September 2021 Release)",
-					"Pause at 16.52 (August 2021 Release)",
-					"Pause at 16.51 (July 2021 Release)"
+					"Pause at 16.57 (January 2022 Release)"
 					],
 				"dependencies": {
 					"ChannelName": "Custom"
@@ -163,6 +159,20 @@
 				"href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline"
 			}]
 		},
+		"UpdateDeadline.FinalCountDown": {
+			"title": "Number of minutes for the final countdown timer",
+			"description": "Specify the number of minutes for the forced deadline countdown timer. The allowed range is 10 - 720 minutes (12 hours). The default is 60 minutes.",
+			"propertyOrder": 85,
+			"type": "integer",
+			"default": 60,
+			"options": {
+				"infoText": "Key: UpdateDeadline.FinalCountDown"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline"
+			}]
+		},
 		"ExtendedLogging": {
 			"title": "Enable extended logging",
 			"description": "Write verbose logging events to /Library/Logs/Microsoft/autoupdate.log",
@@ -207,10 +217,10 @@
 			"propertyOrder": 112,
 			"type": "string",
 			"default": "Network",
-			"enum": ["Network", "CPU"],
+			"enum": ["Network", "CPU", "None"],
 			"options": {
 				"infoText": "Key: UpdaterOptimization",
-				"enum_titles": ["Lower network overhead", "Lower processor overhead"]
+				"enum_titles": ["Lower network overhead", "Lower processor overhead", "Always use full updates"]
 			}
 		},
 		"ApplicationsSystem": {
@@ -388,6 +398,14 @@
 					"required": true,
 					"options": {
 						"hidden": true
+					}
+				},
+				"ChannelName": {
+					"type": "string",
+					"enum": ["Current", "Preview", "Beta"],
+					"default": "",
+					"options": {
+						"enum_titles": ["Current Channel", "Current Channel (Preview)", "Beta Channel"]
 					}
 				}
 			}
