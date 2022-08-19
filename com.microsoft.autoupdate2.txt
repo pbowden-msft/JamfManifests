@@ -1,7 +1,7 @@
 {
 	"title": "com.microsoft.autoupdate2",
 	"description": "Preference Domain: com.microsoft.autoupdate2,  Application: MAU",
-	"__version": "4.48",
+	"__version": "4.50",
 	"__feedback": "jmanifest@microsoft.com",
 	"type": "object",
 	"options": {
@@ -221,6 +221,16 @@
 			"options": {
 				"infoText": "Key: UpdaterOptimization",
 				"enum_titles": ["Lower network overhead", "Lower processor overhead", "Always use full updates"]
+			}
+		},
+		"GuardAgainstAppModification": {
+			"title": "Guard against app modification",
+			"description": "Retain and reuse app clones after the update cycle. This allows for future delta updates even when the source app has been modified by a third-party tool.",
+			"propertyOrder": 115,
+			"type": "boolean",
+			"default": false,
+			"options": {
+				"infoText": "Key: GuardAgainstAppModification"
 			}
 		},
 		"ApplicationsSystem": {
