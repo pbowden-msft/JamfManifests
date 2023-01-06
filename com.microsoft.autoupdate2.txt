@@ -1,7 +1,7 @@
 {
 	"title": "com.microsoft.autoupdate2",
 	"description": "Preference Domain: com.microsoft.autoupdate2,  Application: MAU",
-	"__version": "4.50",
+	"__version": "4.54",
 	"__feedback": "jmanifest@microsoft.com",
 	"type": "object",
 	"options": {
@@ -21,12 +21,12 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/en-us/deployoffice/privacy/mac-privacy-preferences#preference-setting-for-the-required-data-notice-dialog-for-microsoft-autoupdate"
+				"href": "https://learn.microsoft.com/en-us/deployoffice/privacy/mac-privacy-preferences#preference-setting-for-the-required-data-notice-dialog-for-microsoft-autoupdate"
 			}]
 		},
 		"HowToCheck": {
 			"title": "Enable AutoUpdate",
-			"description": "Specifies whether AutoUpdate should download and install updates. This value should be true unless you need to temporarily halt all updates.",
+			"description": "Specifies whether AutoUpdate should download and install updates. This value should be true unless you need to temporarily halt all automatic updates.",
 			"propertyOrder": 20,
 			"type": "string",
 			"default": "AutomaticDownload",
@@ -58,7 +58,7 @@
 		},
 		"ManifestServer": {
 			"title": "Deferred updates",
-			"description": "You can tell AutoUpdate to either a) wait for a number of days to pass before downloading updates from the Current Channel, or b) stop Office from advancing beyond a given version. Deferred updates only affects Word, Excel, PowerPoint, Outlook, and OneNote. Other applications such as Edge, Defender, and Company Portal will receive updates based on the regular Current Channel schedule.",
+			"description": "You can tell AutoUpdate to either a) wait for a number of days to pass before downloading updates from the Current Channel, or b) stop Office from advancing beyond a given version. Deferred updates only affects Word, Excel, PowerPoint, Outlook, and OneNote. Other applications such as Edge, Defender, and Company Portal will receive updates based on the regular Current Channel schedule. Use the Change Freeze option to prevent all updates including user attempts to manually update.",
 			"propertyOrder": 40,
 			"type": "string",
 			"default": "https://officecdnmac.microsoft.com/pr/Defer.3/",
@@ -69,18 +69,21 @@
 				"https://officecdnmac.microsoft.com/pr/Defer.21/",
 				"https://officecdnmac.microsoft.com/pr/Defer.28/",
 				"https://officecdnmac.microsoft.com/pr/Defer.45/",
+				"https://officecdnmac.microsoft.com/pr/16.80.2312/",
+				"https://officecdnmac.microsoft.com/pr/16.79.2311/",
+				"https://officecdnmac.microsoft.com/pr/16.78.2310/",
+				"https://officecdnmac.microsoft.com/pr/16.77.2309/",
+				"https://officecdnmac.microsoft.com/pr/16.76.2308/",
+				"https://officecdnmac.microsoft.com/pr/16.75.2307/",
+				"https://officecdnmac.microsoft.com/pr/16.74.2306/",
+				"https://officecdnmac.microsoft.com/pr/16.73.2305/",
+				"https://officecdnmac.microsoft.com/pr/16.72.2304/",
+				"https://officecdnmac.microsoft.com/pr/16.71.2303/",
+				"https://officecdnmac.microsoft.com/pr/16.70.2302/",
+				"https://officecdnmac.microsoft.com/pr/16.69.2301/",
 				"https://officecdnmac.microsoft.com/pr/16.68.2212/",
 				"https://officecdnmac.microsoft.com/pr/16.67.2211/",
-				"https://officecdnmac.microsoft.com/pr/16.66.2210/",
-				"https://officecdnmac.microsoft.com/pr/16.65.2209/",
-				"https://officecdnmac.microsoft.com/pr/16.64.2208/",
-				"https://officecdnmac.microsoft.com/pr/16.63.2207/",
-				"https://officecdnmac.microsoft.com/pr/16.62.2206/",
-				"https://officecdnmac.microsoft.com/pr/16.61.2205/",
-				"https://officecdnmac.microsoft.com/pr/16.60.2204/",
-				"https://officecdnmac.microsoft.com/pr/16.59.2203/",
-				"https://officecdnmac.microsoft.com/pr/16.58.2202/",
-				"https://officecdnmac.microsoft.com/pr/16.57.2201/"
+				"https://officecdnmac.microsoft.com/pr/Freeze/"
 				],
 			"options": {
 				"infoText": "Key: ManifestServer",
@@ -91,18 +94,21 @@
 					"Defer 21 days",
 					"Defer 28 days",
 					"Defer 45 days",
+					"Pause at 16.80 (December 2023 Release)",
+					"Pause at 16.79 (November 2023 Release)",
+					"Pause at 16.78 (October 2023 Release)",
+					"Pause at 16.77 (September 2023 Release)",
+					"Pause at 16.76 (August 2023 Release)",
+					"Pause at 16.75 (July 2023 Release)",
+					"Pause at 16.74 (June 2023 Release)",
+					"Pause at 16.73 (May 2023 Release)",
+					"Pause at 16.72 (April 2023 Release)",
+					"Pause at 16.71 (March 2023 Release)",
+					"Pause at 16.70 (February 2023 Release)",
+					"Pause at 16.69 (January 2023 Release)",
 					"Pause at 16.68 (December 2022 Release)",
 					"Pause at 16.67 (November 2022 Release)",
-					"Pause at 16.66 (October 2022 Release)",
-					"Pause at 16.65 (September 2022 Release)",
-					"Pause at 16.64 (August 2022 Release)",
-					"Pause at 16.63 (July 2022 Release)",
-					"Pause at 16.62 (June 2022 Release)",
-					"Pause at 16.61 (May 2022 Release)",
-					"Pause at 16.60 (April 2022 Release)",
-					"Pause at 16.59 (March 2022 Release)",
-					"Pause at 16.58 (February 2022 Release)",
-					"Pause at 16.57 (January 2022 Release)"
+					"Change Freeze"
 					],
 				"dependencies": {
 					"ChannelName": "Custom"
@@ -127,7 +133,7 @@
 		},
 		"DisableInsiderCheckbox": {
 			"title": "Disable Office Insider membership",
-			"description": "Prevent users from changing to an Office Insider channel and obtaining Preview or Beta updates. The default value is false.",
+			"description": "Prevent users from changing to a Microsoft 365 Insider channel and obtaining Preview or Beta updates. The default value is false.",
 			"propertyOrder": 60,
 			"type": "boolean",
 			"default": true,
@@ -156,7 +162,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline"
+				"href": "https://learn.microsoft.com/en-us/deployoffice/mac/mau-deadline"
 			}]
 		},
 		"UpdateDeadline.FinalCountDown": {
@@ -170,7 +176,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/en-us/deployoffice/mac/mau-deadline"
+				"href": "https://learn.microsoft.com/en-us/deployoffice/mac/mau-deadline"
 			}]
 		},
 		"ExtendedLogging": {
@@ -189,7 +195,7 @@
 		},
 		"StartDaemonOnAppLaunch": {
 			"title": "Register app on launch",
-			"description": "Force Office apps to register with AutoUpdate on each launch.",
+			"description": "Force Microsoft 365 and Office apps to register with AutoUpdate on each launch.",
 			"propertyOrder": 100,
 			"type": "boolean",
 			"default": true,
@@ -236,7 +242,7 @@
 		"ApplicationsSystem": {
 			"title": "Applications",
 			"propertyOrder": 120,
-			"description": "Forcibly register applications that should be managed by Microsoft AutoUpdate.",
+			"description": "Forcibly register applications that should be managed by Microsoft AutoUpdate. Optionally set per-app update overrides.",
 			"$ref": "#/definitions/applications"
 		}
 	},
@@ -306,10 +312,6 @@
 					"title": "Microsoft Remote Desktop",
 					"$ref": "#/definitions/application"
 				},
-				"/Applications/Microsoft Defender ATP.app": {
-					"title": "Microsoft Defender ATP",
-					"$ref": "#/definitions/application"
-				},
 				"/Applications/Microsoft Defender.app": {
 					"title": "Microsoft Defender",
 					"$ref": "#/definitions/application"
@@ -376,10 +378,6 @@
 					"LCID": 1033,
 					"Application ID": "MSRD10"
 				},
-				"/Applications/Microsoft Defender ATP.app": {
-					"LCID": 1033,
-					"Application ID": "WDAV00"
-				},
 				"/Applications/Microsoft Defender.app": {
 					"LCID": 1033,
 					"Application ID": "WDAV00"
@@ -401,7 +399,10 @@
 			"properties": {
 				"Application ID": {
 					"type": "string",
-					"required": true
+					"required": true,
+					"options": {
+						"hidden": true
+					}
 				},
 				"LCID": {
 					"type": "integer",
@@ -410,12 +411,23 @@
 						"hidden": true
 					}
 				},
-				"ChannelName": {
+				"ManifestServer": {
+					"title": "Update channel override",
 					"type": "string",
-					"enum": ["Current", "Preview", "Beta"],
+					"enum": [
+						"https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/",
+						"https://officecdnmac.microsoft.com/pr/1ac37578-5a24-40fb-892e-b89d85b6dfaa/MacAutoupdate/",
+						"https://officecdnmac.microsoft.com/pr/4B2D7701-0A4F-49C8-B4CB-0C2D4043F51F/MacAutoupdate/",
+						"https://officecdnmac.microsoft.com/pr/Freeze/"
+						],
 					"default": "",
 					"options": {
-						"enum_titles": ["Current Channel", "Current Channel (Preview)", "Beta Channel"]
+						"enum_titles": [
+							"Current Channel",
+							"Current Channel (Preview)",
+							"Beta Channel",
+							"Change Freeze"
+							]
 					}
 				}
 			}
