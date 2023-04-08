@@ -1,7 +1,7 @@
 {
 	"title": "com.microsoft.autoupdate2",
 	"description": "Preference Domain: com.microsoft.autoupdate2,  Application: MAU",
-	"__version": "4.54",
+	"__version": "4.57",
 	"__feedback": "jmanifest@microsoft.com",
 	"type": "object",
 	"options": {
@@ -46,10 +46,10 @@
 			"propertyOrder": 30,
 			"type": "string",
 			"default": "Current",
-			"enum": ["Current", "Preview", "Custom", "Beta"],
+			"enum": ["Current", "CurrentThrottle", "Preview", "Custom", "Beta"],
 			"options": {
 				"infoText": "Key: ChannelName",
-				"enum_titles": ["Current Channel", "Current Channel (Preview)", "Current Channel (Deferred)", "Beta Channel"]
+				"enum_titles": ["Current Channel", "Current Channel (Monthly)", "Current Channel (Preview)", "Current Channel (Deferred)", "Beta Channel"]
 			},
 			"links": [{
 				"rel": "More information",
