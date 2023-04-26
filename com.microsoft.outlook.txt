@@ -1,7 +1,7 @@
 {
 	"title": "com.microsoft.Outlook",
 	"description": "Preference Domain: com.microsoft.Outlook,  Application: Outlook",
-	"__version": "16.57",
+	"__version": "16.68",
 	"__feedback": "jmanifest@microsoft.com",
 	"type": "object",
 	"options": {
@@ -14,14 +14,14 @@
 			"propertyOrder": 10,
 			"type": "integer",
 			"enum": [0, 1, 2, 3],
-			"default": 1,
+			"default": 2,
 			"options": {
 				"infoText": "Key: EnableNewOutlook",
 				"enum_titles": ["Classic Outlook only", "Default to Classic Outlook. Users may switch to New Outlook", "Default to New Outlook. Users may revert to Classic Outlook", "New Outlook only"]
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#enable-new-outlook"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#enable-new-outlook"
 			}]
 		},
 		"AllowedEmailDomains": {
@@ -44,7 +44,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#allow-only-corporate-mailboxes-to-be-added"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#allow-only-corporate-mailboxes-to-be-added"
 			}]
 		},
 		"DefaultEmailAddressOrDomain": {
@@ -61,21 +61,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#specify-microsoft-365-mailbox-to-be-added-on-first-launch"
-			}]
-		},
-		"PhoenixOnboardingFlowFRELaunched": {
-			"title": "Hide the 'Personalize the new Outlook' dialog",
-			"description": "Suppress the welcome dialog that appears when users switch to New Outlook.",
-			"propertyOrder": 40,
-			"type": "boolean",
-			"default": true,
-			"options": {
-				"infoText": "Key: PhoenixOnboardingFlowFRELaunched"
-			},
-			"links": [{
-				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#specify-microsoft-365-mailbox-to-be-added-on-first-launch"
 			}]
 		},
 		"UserPreference_maxCheckListDisplayDurationMet": {
@@ -89,7 +75,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook"
 			}]
 		},
 		"TrustO365AutodiscoverRedirect": {
@@ -103,7 +89,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook"
 			}]
 		},
 		"SuppressO365AutodiscoverOverride": {
@@ -117,7 +103,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook"
 			}]
 		},
 		"HideFoldersOnMyComputerRootInFolderList": {
@@ -131,7 +117,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#hide-local-folders"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#hide-local-folders"
 			}]
 		},
 		"DisableImport": {
@@ -145,7 +131,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#disable-import"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#disable-import"
 			}]
 		},
 		"DisableExport": {
@@ -159,7 +145,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#disable-export"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#disable-export"
 			}]
 		},
 		"DisableEncryptOnly": {
@@ -173,7 +159,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#disable-encrypt-only"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#disable-encrypt-only"
 			}]
 		},
 		"DisableDoNotForward": {
@@ -187,7 +173,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#disable-do-not-forward"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#disable-do-not-forward"
 			}]
 		},
 		"DisableSMIMECompose": {
@@ -201,7 +187,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#disable-smime"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#disable-smime"
 			}]
 		},
 		"AllowCertsWithoutMatchingEmailAddress": {
@@ -215,7 +201,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#allow-smime-certificates-without-a-matching-email-address"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#allow-smime-certificates-without-a-matching-email-address"
 			}]
 		},
 		"SMIMECertificatesLookupOrder": {
@@ -237,7 +223,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#set-the-order-in-which-smime-certificates-are-considered"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#set-the-order-in-which-smime-certificates-are-considered"
 			}]
 		},
 		"AutomaticallyDownloadExternalContent": {
@@ -253,7 +239,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#specify-when-pictures-are-downloaded-for-email"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#specify-when-pictures-are-downloaded-for-email"
 			}]
 		},
 		"DisableSignatures": {
@@ -267,21 +253,21 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#disable-signatures"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#disable-signatures"
 			}]
 		},
-		"OLDisableJunkOptionsPrefKey": {
+		"DisableJunkOptionsPrefKey": {
 			"title": "Disable Junk settings",
 			"description": "Prevent users from applying Junk options to emails.",
 			"propertyOrder": 180,
 			"type": "boolean",
 			"default": false,
 			"options": {
-				"infoText": "Key: OLDisableJunkOptionsPrefKey"
+				"infoText": "Key: DisableJunkOptionsPrefKey"
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#disable-junk-settings"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#disable-junk-settings"
 			}]
 		},
 		"UserPreference_AppTheming": {
@@ -297,7 +283,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook"
 			}]
 		},
 		"DefaultWeatherLocation": {
@@ -314,7 +300,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#specify-default-weather-location"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#specify-default-weather-location"
 			}]
 		},
 		"Weather_update_automatically": {
@@ -328,7 +314,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#disable-automatic-updating-of-weather-location"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#disable-automatic-updating-of-weather-location"
 			}]
 		},
 		"CalendarFirstDayOfWeek": {
@@ -344,7 +330,21 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#specify-calendar-first-day-of-week"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#specify-calendar-first-day-of-week"
+			}]
+		},
+		"DisableRespondToMeetingWithoutResponse": {
+			"title": "Disable 'Do not send response'",
+			"description": "Prevent users from selecting 'Do not send response' when replying to a meeting request.",
+			"propertyOrder": 225,
+			"type": "boolean",
+			"default": false,
+			"options": {
+				"infoText": "Key: DisableRespondToMeetingWithoutResponse"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#disable-do-not-send-a-response"
 			}]
 		},
 		"DisableTeamsMeeting": {
@@ -358,7 +358,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#disable-teams-online-meetings"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#disable-teams-online-meetings"
 			}]
 		},
 		"DisableSkypeMeeting": {
@@ -372,9 +372,9 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://docs.microsoft.com/deployoffice/mac/preferences-outlook#disable-skype-for-business-online-meetings"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#disable-skype-for-business-online-meetings"
 			}]
 		}
 	},
-	"defaultProperties": ["EnableNewOutlook", "AllowedEmailDomains", "DefaultEmailAddressOrDomain", "PhoenixOnboardingFlowFRELaunched", "UserPreference_maxCheckListDisplayDurationMet", "TrustO365AutodiscoverRedirect", "DisableImport", "DisableExport", "DisableEncryptOnly", "DisableDoNotForward", "DisableSMIMECompose", "DefaultWeatherLocation", "DisableTeamsMeeting"]
+	"defaultProperties": ["EnableNewOutlook", "AllowedEmailDomains", "DefaultEmailAddressOrDomain", "UserPreference_maxCheckListDisplayDurationMet", "TrustO365AutodiscoverRedirect", "DisableImport", "DisableExport", "DisableEncryptOnly", "DisableDoNotForward", "DisableSMIMECompose", "DefaultWeatherLocation", "DisableTeamsMeeting"]
 }
