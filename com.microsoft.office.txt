@@ -1,7 +1,7 @@
 {
 	"title": "com.microsoft.office",
-	"description": "Preference Domain: com.microsoft.office,  Application: Office 365/2021/2019 Suite",
-	"__version": "16.57",
+	"description": "Preference Domain: com.microsoft.office,  Application: Microsoft 365 and Office 2021/2019 Suite",
+	"__version": "16.68",
 	"__feedback": "jmanifest@microsoft.com",
 	"type": "object",
 	"options": {
@@ -19,7 +19,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://aka.ms/outlookprefs"
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-office#automatically-sign-in-and-suppress-welcome-dialogs"
 			}]
 		},
 		"DiagnosticDataTypePreference": {
@@ -35,7 +35,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://aka.ms/macdiagpref"
+				"href": "https://learn.microsoft.com/deployoffice/privacy/mac-privacy-preferences#preference-setting-for-diagnostic-data"
 			}]
 		},
 		"ShowWhatsNewOnLaunch": {
@@ -46,7 +46,11 @@
 			"default": true,
 			"options": {
 				"infoText": "Key: ShowWhatsNewOnLaunch"
-			}
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-office"
+			}]
 		},
 		"ShowDocStageOnLaunch": {
 			"title": "Show Template Gallery on app launch",
@@ -56,7 +60,11 @@
 			"default": true,
 			"options": {
 				"infoText": "Key: ShowDocStageOnLaunch"
-			}
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-office"
+			}]
 		},
 		"DefaultsToLocalOpenSave": {
 			"title": "Default to local files for open/save",
@@ -66,7 +74,11 @@
 			"default": false,
 			"options": {
 				"infoText": "Key: DefaultsToLocalOpenSave"
-			}
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-office"
+			}]
 		},
 		"OptionalConnectedExperiencesPreference": {
 			"title": "Allow optional connected experiences",
@@ -79,7 +91,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://aka.ms/macoce"
+				"href": "https://learn.microsoft.com/deployoffice/privacy/mac-privacy-preferences#preference-setting-for-optional-connected-experiences"
 			}]
 		},
 		"OfficeExperiencesAnalyzingContentPreference": {
@@ -93,7 +105,7 @@
 			},
 			"links": [{
 				"rel": "Help Link",
-				"href": "https://aka.ms/macoce"
+				"href": "https://learn.microsoft.com/deployoffice/privacy/mac-privacy-preferences#preference-setting-for-connected-experiences-that-analyze-your-content"
 			}]
 		},
 		"OfficeExperiencesDownloadingContentPreference": {
@@ -107,7 +119,7 @@
 			},
 			"links": [{
 				"rel": "Help Link",
-				"href": "https://aka.ms/macoce"
+				"href": "https://learn.microsoft.com/deployoffice/privacy/mac-privacy-preferences#preference-setting-for-connected-experiences-that-download-online-content"
 			}]
 		},
 		"EnableBackgroundAccessibilityChecker": {
@@ -130,7 +142,11 @@
 			"default": false,
 			"options": {
 				"infoText": "Key: OfficeWebAddinDisableOMEXCatalog"
-			}
+			},
+			"links": [{
+				"rel": "Help Link",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-add-ins"
+			}]
 		},
 		"DisableCloudFonts": {
 			"title": "Disable cloud fonts",
@@ -140,7 +156,11 @@
 			"default": false,
 			"options": {
 				"infoText": "Key: DisableCloudFonts"
-			}
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-office"
+			}]
 		},
 		"NPSSurveyDisabled": {
 			"title": "Disable user surveys",
@@ -165,7 +185,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://aka.ms/macvbpref"
+				"href": "https://learn.microsoft.com/deployoffice/mac/set-preference-macro-security-office-for-mac#visual-basic-macro-notifications"
 			}]
 		},
 		"VBAObjectModelIsTrusted": {
@@ -179,7 +199,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://aka.ms/macvbpref"
+				"href": "https://learn.microsoft.com/deployoffice/mac/set-preference-macro-security-office-for-mac#vba-object-model"
 			}]
 		},
 		"AllowVisualBasicToBindToSystem": {
@@ -193,7 +213,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://aka.ms/macvbpref"
+				"href": "https://learn.microsoft.com/deployoffice/mac/set-preference-macro-security-office-for-mac#visual-basic-system-bindings"
 			}]
 		},
 		"DisableVisualBasicExternalDylibs": {
@@ -207,7 +227,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://aka.ms/macvbpref"
+				"href": "https://learn.microsoft.com/deployoffice/mac/set-preference-macro-security-office-for-mac#visual-basic-external-library-bindings"
 			}]
 		},
 		"DisableVisualBasicToBindToPopen": {
@@ -221,7 +241,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://aka.ms/macvbpref"
+				"href": "https://learn.microsoft.com/deployoffice/mac/set-preference-macro-security-office-for-mac#visual-basic-pipe-bindings"
 			}]
 		},
 		"DisableVisualBasicMacScript": {
@@ -235,7 +255,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://aka.ms/macvbpref"
+				"href": "https://learn.microsoft.com/deployoffice/mac/set-preference-macro-security-office-for-mac#visual-basic-and-applescript"
 			}]
 		},
 		"VisualBasicEntirelyDisabled": {
@@ -249,7 +269,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://aka.ms/macvbpref"
+				"href": "https://learn.microsoft.com/deployoffice/mac/set-preference-macro-security-office-for-mac#disable-visual-basic"
 			}]
 		}
 	}
