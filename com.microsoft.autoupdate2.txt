@@ -1,7 +1,7 @@
 {
 	"title": "com.microsoft.autoupdate2",
 	"description": "Preference Domain: com.microsoft.autoupdate2,  Application: MAU",
-	"__version": "4.57",
+	"__version": "4.59",
 	"__feedback": "jmanifest@microsoft.com",
 	"type": "object",
 	"options": {
@@ -21,7 +21,7 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://learn.microsoft.com/en-us/deployoffice/privacy/mac-privacy-preferences#preference-setting-for-the-required-data-notice-dialog-for-microsoft-autoupdate"
+				"href": "https://learn.microsoft.com/deployoffice/privacy/mac-privacy-preferences#preference-setting-for-the-required-data-notice-dialog-for-microsoft-autoupdate"
 			}]
 		},
 		"HowToCheck": {
@@ -81,8 +81,6 @@
 				"https://officecdnmac.microsoft.com/pr/16.71.2303/",
 				"https://officecdnmac.microsoft.com/pr/16.70.2302/",
 				"https://officecdnmac.microsoft.com/pr/16.69.2301/",
-				"https://officecdnmac.microsoft.com/pr/16.68.2212/",
-				"https://officecdnmac.microsoft.com/pr/16.67.2211/",
 				"https://officecdnmac.microsoft.com/pr/Freeze/"
 				],
 			"options": {
@@ -106,8 +104,6 @@
 					"Pause at 16.71 (March 2023 Release)",
 					"Pause at 16.70 (February 2023 Release)",
 					"Pause at 16.69 (January 2023 Release)",
-					"Pause at 16.68 (December 2022 Release)",
-					"Pause at 16.67 (November 2022 Release)",
 					"Change Freeze"
 					],
 				"dependencies": {
@@ -162,13 +158,27 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://learn.microsoft.com/en-us/deployoffice/mac/mau-deadline"
+				"href": "https://learn.microsoft.com/deployoffice/mac/mau-deadline"
+			}]
+		},
+		"UpdateDeadline.DialogTitle": {
+			"title": "Specify the text in the forced update dialog",
+			"description": "If not specified, users will see 'Your organization is enforcing app updates'",
+			"propertyOrder": 90,
+			"type": "string",
+			"default": "",
+			"options": {
+				"infoText": "Key: UpdateDeadline.DialogTitle"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/mau-deadline"
 			}]
 		},
 		"UpdateDeadline.FinalCountDown": {
 			"title": "Number of minutes for the final countdown timer",
 			"description": "Specify the number of minutes for the forced deadline countdown timer. The allowed range is 10 - 720 minutes (12 hours). The default is 60 minutes.",
-			"propertyOrder": 85,
+			"propertyOrder": 100,
 			"type": "integer",
 			"default": 60,
 			"options": {
@@ -176,13 +186,13 @@
 			},
 			"links": [{
 				"rel": "More information",
-				"href": "https://learn.microsoft.com/en-us/deployoffice/mac/mau-deadline"
+				"href": "https://learn.microsoft.com/deployoffice/mac/mau-deadline"
 			}]
 		},
 		"ExtendedLogging": {
 			"title": "Enable extended logging",
 			"description": "Write verbose logging events to /Library/Logs/Microsoft/autoupdate.log",
-			"propertyOrder": 90,
+			"propertyOrder": 110,
 			"type": "boolean",
 			"default": true,
 			"options": {
@@ -196,7 +206,7 @@
 		"StartDaemonOnAppLaunch": {
 			"title": "Register app on launch",
 			"description": "Force Microsoft 365 and Office apps to register with AutoUpdate on each launch.",
-			"propertyOrder": 100,
+			"propertyOrder": 120,
 			"type": "boolean",
 			"default": true,
 			"options": {
@@ -210,7 +220,7 @@
 		"UpdateCheckFrequency": {
 			"title": "Update check frequency (mins)",
 			"description": "Specify how often AutoUpdate checks for updates. The allowed range is 240 minutes (4 hours) - 720 minutes (12 hours).",
-			"propertyOrder": 110,
+			"propertyOrder": 130,
 			"type": "integer",
 			"default": 240,
 			"options": {
@@ -220,7 +230,7 @@
 		"UpdaterOptimization": {
 			"title": "Updater optimization technique",
 			"description": "By default AutoUpdate will optimize for smaller packages on the network. However, this can cause larger CPU overheads when security agents (e.g. CrowdStrike) are installed. Alternatively, you can choose to lower the CPU overheads to process updates but accept larger download packages",
-			"propertyOrder": 112,
+			"propertyOrder": 140,
 			"type": "string",
 			"default": "Network",
 			"enum": ["Network", "CPU", "None"],
@@ -232,16 +242,16 @@
 		"GuardAgainstAppModification": {
 			"title": "Guard against app modification",
 			"description": "Retain and reuse app clones after the update cycle. This allows for future delta updates even when the source app has been modified by a third-party tool.",
-			"propertyOrder": 115,
+			"propertyOrder": 150,
 			"type": "boolean",
 			"default": false,
 			"options": {
 				"infoText": "Key: GuardAgainstAppModification"
 			}
 		},
-		"ApplicationsSystem": {
+		"Applications": {
 			"title": "Applications",
-			"propertyOrder": 120,
+			"propertyOrder": 160,
 			"description": "Forcibly register applications that should be managed by Microsoft AutoUpdate. Optionally set per-app update overrides.",
 			"$ref": "#/definitions/applications"
 		}
@@ -290,22 +300,6 @@
 				},
 				"/Applications/Skype for Business.app": {
 					"title": "Skype for Business",
-					"$ref": "#/definitions/application"
-				},
-				"/Applications/Microsoft Edge.app": {
-					"title": "Microsoft Edge",
-					"$ref": "#/definitions/application"
-				},
-				"/Applications/Microsoft Edge Beta.app": {
-					"title": "Microsoft Edge Beta",
-					"$ref": "#/definitions/application"
-				},
-				"/Applications/Microsoft Edge Canary.app": {
-					"title": "Microsoft Edge Canary",
-					"$ref": "#/definitions/application"
-				},
-				"/Applications/Microsoft Edge Dev.app": {
-					"title": "Microsoft Edge Dev",
 					"$ref": "#/definitions/application"
 				},
 				"/Applications/Microsoft Remote Desktop.app": {
@@ -358,22 +352,6 @@
 					"LCID": 1033,
 					"Application ID": "MSFB16"
 				},
-				"/Applications/Microsoft Edge.app": {
-					"LCID": 1033,
-					"Application ID": "EDGE01"
-				},
-				"/Applications/Microsoft Edge Beta.app": {
-					"LCID": 1033,
-					"Application ID": "EDBT01"
-				},
-				"/Applications/Microsoft Edge Canary.app": {
-					"LCID": 1033,
-					"Application ID": "EDCN01"
-				},
-				"/Applications/Microsoft Edge Dev.app": {
-					"LCID": 1033,
-					"Application ID": "EDDV01"
-				},
 				"/Applications/Microsoft Remote Desktop.app": {
 					"LCID": 1033,
 					"Application ID": "MSRD10"
@@ -393,8 +371,9 @@
 			"type": "object",
 			"format": "grid",
 			"options": {
-				"collapsed": true,
-				"disable_properties": true
+				"collapsed": false,
+				"remove_empty_properties": true,
+				"disable_properties": false
 			},
 			"properties": {
 				"Application ID": {
@@ -413,7 +392,9 @@
 				},
 				"ManifestServer": {
 					"title": "Update channel override",
+					"description": "Optionally set a different update channel for each individual app. If this is not set, the global channel will be used.",
 					"type": "string",
+					"required": false,
 					"enum": [
 						"https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/",
 						"https://officecdnmac.microsoft.com/pr/1ac37578-5a24-40fb-892e-b89d85b6dfaa/MacAutoupdate/",
@@ -429,9 +410,24 @@
 							"Change Freeze"
 							]
 					}
+				},
+				"UpdateDeadline.DaysBeforeForcedQuit": {
+					"title": "Days before forced updates",
+					"description": "Specify the maximum number of days that an update can be pending before the user is forced to update the app. Set the value to 0 to disable forced updates.",
+					"type": "integer",
+					"required": false,
+					"default": "",
+					"options": {
+						"infoText": "Key: UpdateDeadline.DaysBeforeForcedQuit"
+					},
+					"links": [{
+						"rel": "More information",
+						"href": "https://learn.microsoft.com/deployoffice/mac/mau-deadline"
+					}]
 				}
+
 			}
 		}
 	},
-	"defaultProperties": ["AcknowledgedDataCollectionPolicy", "HowToCheck", "ChannelName", "ManifestServer", "StartDaemonOnAppLaunch", "UpdateCheckFrequency", "ApplicationsSystem"]
+	"defaultProperties": ["AcknowledgedDataCollectionPolicy", "HowToCheck", "ChannelName", "ManifestServer", "StartDaemonOnAppLaunch", "UpdateCheckFrequency", "Applications"]
 }

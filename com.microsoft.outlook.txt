@@ -1,7 +1,7 @@
 {
 	"title": "com.microsoft.Outlook",
 	"description": "Preference Domain: com.microsoft.Outlook,  Application: Outlook",
-	"__version": "16.68",
+	"__version": "16.73",
 	"__feedback": "jmanifest@microsoft.com",
 	"type": "object",
 	"options": {
@@ -67,11 +67,25 @@
 		"UserPreference_maxCheckListDisplayDurationMet": {
 			"title": "Hide the 'Get started with Outlook' control in the task pane",
 			"description": "Suppress the task pane control that advertises access to toolbar customization, notification preferences, theme, and adding secondary accounts.",
-			"propertyOrder": 50,
+			"propertyOrder": 40,
 			"type": "boolean",
 			"default": true,
 			"options": {
 				"infoText": "Key: UserPreference_maxCheckListDisplayDurationMet"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook"
+			}]
+		},
+		"UserPreference_MessageList_PromoDismiss_AddAccount": {
+			"title": "Hide the 'Multi-account support' promotion in the message list",
+			"description": "Suppress the promotional message that encourages users to add another account.",
+			"propertyOrder": 50,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: UserPreference_MessageList_PromoDismiss_AddAccount"
 			},
 			"links": [{
 				"rel": "More information",
@@ -286,10 +300,24 @@
 				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook"
 			}]
 		},
+		"DisablePrideTheming": {
+			"title": "Disable Pride theme",
+			"description": "Prevent users from applying Pride themes to Outlook.",
+			"propertyOrder": 200,
+			"type": "boolean",
+			"default": false,
+			"options": {
+				"infoText": "Key: DisablePrideTheming"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#disable-pride-theme"
+			}]
+		},
 		"DefaultWeatherLocation": {
 			"title": "Default weather location",
 			"description": "Sets the default weather location in the Calendar view. Enter the city and state or country (e.g. Redmond, WA or Paris, France)",
-			"propertyOrder": 200,
+			"propertyOrder": 210,
 			"type": "string",
 			"options": {
 				"infoText": "Key: DefaultWeatherLocation",
@@ -306,7 +334,7 @@
 		"Weather_update_automatically": {
 			"title": "Disable automatic updating of weather location",
 			"description": "Prevent users from choosing Update Location Automatically for weather location.",
-			"propertyOrder": 210,
+			"propertyOrder": 220,
 			"type": "boolean",
 			"default": false,
 			"options": {
@@ -320,7 +348,7 @@
 		"CalendarFirstDayOfWeek": {
 			"title": "Specify first day of the week",
 			"description": "Set the first day of week in calendar view.",
-			"propertyOrder": 220,
+			"propertyOrder": 230,
 			"type": "integer",
 			"enum": [1, 2, 3, 4, 5, 6, 7],
 			"default": 1,
@@ -336,7 +364,7 @@
 		"DisableRespondToMeetingWithoutResponse": {
 			"title": "Disable 'Do not send response'",
 			"description": "Prevent users from selecting 'Do not send response' when replying to a meeting request.",
-			"propertyOrder": 225,
+			"propertyOrder": 240,
 			"type": "boolean",
 			"default": false,
 			"options": {
@@ -350,7 +378,7 @@
 		"DisableTeamsMeeting": {
 			"title": "Disable Microsoft Teams meeting support",
 			"description": "Prevent users from adding Teams to meeting invites.",
-			"propertyOrder": 230,
+			"propertyOrder": 250,
 			"type": "boolean",
 			"default": false,
 			"options": {
@@ -364,7 +392,7 @@
 		"DisableSkypeMeeting": {
 			"title": "Disable Skype for Business meeting support",
 			"description": "Prevent users from adding Skype for Business to meeting invites.",
-			"propertyOrder": 240,
+			"propertyOrder": 260,
 			"type": "boolean",
 			"default": false,
 			"options": {
@@ -376,5 +404,5 @@
 			}]
 		}
 	},
-	"defaultProperties": ["EnableNewOutlook", "AllowedEmailDomains", "DefaultEmailAddressOrDomain", "UserPreference_maxCheckListDisplayDurationMet", "TrustO365AutodiscoverRedirect", "DisableImport", "DisableExport", "DisableEncryptOnly", "DisableDoNotForward", "DisableSMIMECompose", "DefaultWeatherLocation", "DisableTeamsMeeting"]
+	"defaultProperties": ["EnableNewOutlook", "AllowedEmailDomains", "DefaultEmailAddressOrDomain", "UserPreference_maxCheckListDisplayDurationMet", "UserPreference_MessageList_PromoDismiss_AddAccount", "TrustO365AutodiscoverRedirect", "HideFoldersOnMyComputerRootInFolderList", "DisableImport", "DisableExport", "DisableEncryptOnly", "DisableDoNotForward", "DisableSMIMECompose", "DefaultWeatherLocation", "DisableTeamsMeeting"]
 }

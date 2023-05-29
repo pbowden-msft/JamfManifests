@@ -1,7 +1,7 @@
 {
 	"title": "com.microsoft.office",
 	"description": "Preference Domain: com.microsoft.office,  Application: Microsoft 365 and Office 2021/2019 Suite",
-	"__version": "16.68",
+	"__version": "16.73",
 	"__feedback": "jmanifest@microsoft.com",
 	"type": "object",
 	"options": {
@@ -104,7 +104,7 @@
 				"infoText": "Key: OfficeExperiencesAnalyzingContentPreference"
 			},
 			"links": [{
-				"rel": "Help Link",
+				"rel": "More information",
 				"href": "https://learn.microsoft.com/deployoffice/privacy/mac-privacy-preferences#preference-setting-for-connected-experiences-that-analyze-your-content"
 			}]
 		},
@@ -118,7 +118,7 @@
 				"infoText": "Key: OfficeExperiencesDownloadingContentPreference"
 			},
 			"links": [{
-				"rel": "Help Link",
+				"rel": "More information",
 				"href": "https://learn.microsoft.com/deployoffice/privacy/mac-privacy-preferences#preference-setting-for-connected-experiences-that-download-online-content"
 			}]
 		},
@@ -144,7 +144,7 @@
 				"infoText": "Key: OfficeWebAddinDisableOMEXCatalog"
 			},
 			"links": [{
-				"rel": "Help Link",
+				"rel": "More information",
 				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-add-ins"
 			}]
 		},
@@ -270,6 +270,132 @@
 			"links": [{
 				"rel": "More information",
 				"href": "https://learn.microsoft.com/deployoffice/mac/set-preference-macro-security-office-for-mac#disable-visual-basic"
+			}]
+		},
+		"InstallWord": {
+			"title": "Install Word as part of the Suite Installer",
+			"description": "This preference can be used to exclude Microsoft Word from being installed when the Microsoft 365/Office Suite Installer is run.",
+			"propertyOrder": 200,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: InstallWord"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-office#excluding-apps"
+			}]
+		},
+		"InstallExcel": {
+			"title": "Install Excel as part of the Suite Installer",
+			"description": "This preference can be used to exclude Microsoft Excel from being installed when the Microsoft 365/Office Suite Installer is run.",
+			"propertyOrder": 210,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: InstallExcel"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-office#excluding-apps"
+			}]
+		},
+		"InstallPowerPoint": {
+			"title": "Install PowerPoint as part of the Suite Installer",
+			"description": "This preference can be used to exclude Microsoft PowerPoint from being installed when the Microsoft 365/Office Suite Installer is run.",
+			"propertyOrder": 220,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: InstallPowerPoint"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-office#excluding-apps"
+			}]
+		},
+		"InstallOutlook": {
+			"title": "Install Outlook as part of the Suite Installer",
+			"description": "This preference can be used to exclude Microsoft Outlook from being installed when the Microsoft 365/Office Suite Installer is run.",
+			"propertyOrder": 230,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: InstallOutlook"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-office#excluding-apps"
+			}]
+		},
+		"InstallOneNote": {
+			"title": "Install OneNote as part of the Suite Installer",
+			"description": "This preference can be used to exclude Microsoft OneNote from being installed when the Microsoft 365/Office Suite Installer is run.",
+			"propertyOrder": 240,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: InstallOneNote"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-office#excluding-apps"
+			}]
+		},
+		"InstallOneDrive": {
+			"title": "Install OneDrive as part of the Suite Installer",
+			"description": "This preference can be used to exclude Microsoft OneDrive from being installed when the Microsoft 365/Office Suite Installer is run.",
+			"propertyOrder": 250,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: InstallOneDrive"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-office#excluding-apps"
+			}]
+		},
+		"InstallTeams": {
+			"title": "Install Teams as part of the Suite Installer",
+			"description": "This preference can be used to exclude Microsoft Teams from being installed when the Microsoft 365/Office Suite Installer is run.",
+			"propertyOrder": 260,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: InstallTeams"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-office#excluding-apps"
+			}]
+		},
+		"InstallAutoUpdate": {
+			"title": "Install AutoUpdate as part of the Suite Installer",
+			"description": "This preference can be used to exclude Microsoft AutoUpdate from being installed when the Microsoft 365/Office Suite Installer is run.",
+			"propertyOrder": 270,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: InstallAutoUpdate"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-office#excluding-apps"
+			}]
+		},
+		"InstallDefender": {
+			"title": "Install Defender as part of the Suite Installer",
+			"description": "This preference can be used to exclude Microsoft Defender from being installed when the Microsoft 365/Office Suite Installer is run.",
+			"propertyOrder": 280,
+			"type": "boolean",
+			"default": false,
+			"options": {
+				"infoText": "Key: InstallDefender"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-office#excluding-apps"
 			}]
 		}
 	}
