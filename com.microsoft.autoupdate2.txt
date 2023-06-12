@@ -1,7 +1,7 @@
 {
 	"title": "com.microsoft.autoupdate2",
 	"description": "Preference Domain: com.microsoft.autoupdate2,  Application: MAU",
-	"__version": "4.59",
+	"__version": "4.60",
 	"__feedback": "jmanifest@microsoft.com",
 	"type": "object",
 	"options": {
@@ -82,7 +82,7 @@
 				"https://officecdnmac.microsoft.com/pr/16.70.2302/",
 				"https://officecdnmac.microsoft.com/pr/16.69.2301/",
 				"https://officecdnmac.microsoft.com/pr/Freeze/"
-				],
+			],
 			"options": {
 				"infoText": "Key: ManifestServer",
 				"enum_titles": [
@@ -105,7 +105,7 @@
 					"Pause at 16.70 (February 2023 Release)",
 					"Pause at 16.69 (January 2023 Release)",
 					"Change Freeze"
-					],
+				],
 				"dependencies": {
 					"ChannelName": "Custom"
 				}
@@ -247,6 +247,41 @@
 			"default": false,
 			"options": {
 				"infoText": "Key: GuardAgainstAppModification"
+			}
+		},
+		"ApplicationsSystem": {
+			"title": "Lock application registration",
+			"propertyOrder": 165,
+			"description": "Lock application registration to only the list of apps specified in this profile.",
+			"type": "object",
+			"options": {
+				"collapsed": true,
+				"disable_properties": true
+			},
+			"properties": {
+				"/Library/PrivilegedHelperTools/com.microsoft.office.licensingV2.helper": {
+					"title": "Licensing helper",
+					"type": "object",
+					"options": {
+						"collapsed": true,
+						"disable_properties": true,
+						"hidden": true
+					},
+					"properties": {
+						"Application ID": {
+							"type": "string",
+							"default": "OLIC02"
+						},
+						"LCID": {
+							"type": "integer",
+							"default": 1033
+						},
+						"HideOnGUI": {
+							"type": "boolean",
+							"default": "true"
+						}
+					}
+				}
 			}
 		},
 		"Applications": {
@@ -400,7 +435,7 @@
 						"https://officecdnmac.microsoft.com/pr/1ac37578-5a24-40fb-892e-b89d85b6dfaa/MacAutoupdate/",
 						"https://officecdnmac.microsoft.com/pr/4B2D7701-0A4F-49C8-B4CB-0C2D4043F51F/MacAutoupdate/",
 						"https://officecdnmac.microsoft.com/pr/Freeze/"
-						],
+					],
 					"default": "",
 					"options": {
 						"enum_titles": [
@@ -408,7 +443,7 @@
 							"Current Channel (Preview)",
 							"Beta Channel",
 							"Change Freeze"
-							]
+						]
 					}
 				},
 				"UpdateDeadline.DaysBeforeForcedQuit": {
