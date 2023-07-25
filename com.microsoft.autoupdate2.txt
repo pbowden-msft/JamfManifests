@@ -1,7 +1,7 @@
 {
 	"title": "com.microsoft.autoupdate2",
 	"description": "Preference Domain: com.microsoft.autoupdate2,  Application: MAU",
-	"__version": "4.60",
+	"__version": "4.61",
 	"__feedback": "jmanifest@microsoft.com",
 	"type": "object",
 	"options": {
@@ -249,7 +249,7 @@
 				"infoText": "Key: GuardAgainstAppModification"
 			}
 		},
-		"ApplicationsSystem": {
+		"Applications": {
 			"title": "Lock application registration",
 			"propertyOrder": 165,
 			"description": "Lock application registration to only the list of apps specified in this profile.",
@@ -284,7 +284,7 @@
 				}
 			}
 		},
-		"Applications": {
+		"ApplicationsSystem": {
 			"title": "Applications",
 			"propertyOrder": 160,
 			"description": "Forcibly register applications that should be managed by Microsoft AutoUpdate. Optionally set per-app update overrides.",
@@ -425,30 +425,39 @@
 						"hidden": true
 					}
 				},
-				"ManifestServer": {
+				"ChannelName": {
 					"title": "Update channel override",
 					"description": "Optionally set a different update channel for each individual app. If this is not set, the global channel will be used.",
+					"propertyOrder": 10,
+					"type": "string",
+					"required": false,
+					"enum": ["Current", "Preview", "Beta", "Custom"],
+					"default": "",
+					"options": {
+						"infoText": "Key: ChannelName",
+						"enum_titles": ["Current Channel", "Current Channel (Preview)", "Beta Channel", "Custom"]
+					}
+				},
+				"ManifestServer": {
+					"title": "Change freeze",
+					"description": "Halt app updates including user attempts to manually update.",
+					"propertyOrder": 20,
 					"type": "string",
 					"required": false,
 					"enum": [
-						"https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/",
-						"https://officecdnmac.microsoft.com/pr/1ac37578-5a24-40fb-892e-b89d85b6dfaa/MacAutoupdate/",
-						"https://officecdnmac.microsoft.com/pr/4B2D7701-0A4F-49C8-B4CB-0C2D4043F51F/MacAutoupdate/",
 						"https://officecdnmac.microsoft.com/pr/Freeze/"
 					],
 					"default": "",
 					"options": {
 						"enum_titles": [
-							"Current Channel",
-							"Current Channel (Preview)",
-							"Beta Channel",
-							"Change Freeze"
+							"true"
 						]
 					}
 				},
 				"UpdateDeadline.DaysBeforeForcedQuit": {
 					"title": "Days before forced updates",
 					"description": "Specify the maximum number of days that an update can be pending before the user is forced to update the app. Set the value to 0 to disable forced updates.",
+					"propertyOrder": 30,
 					"type": "integer",
 					"required": false,
 					"default": "",
@@ -464,5 +473,5 @@
 			}
 		}
 	},
-	"defaultProperties": ["AcknowledgedDataCollectionPolicy", "HowToCheck", "ChannelName", "ManifestServer", "StartDaemonOnAppLaunch", "UpdateCheckFrequency", "Applications"]
+	"defaultProperties": ["AcknowledgedDataCollectionPolicy", "HowToCheck", "ChannelName", "ManifestServer", "StartDaemonOnAppLaunch", "UpdateCheckFrequency", "ApplicationsSystem"]
 }
