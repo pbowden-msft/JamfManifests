@@ -1,7 +1,7 @@
 {
 	"title": "com.microsoft.Outlook",
 	"description": "Preference Domain: com.microsoft.Outlook,  Application: Outlook",
-	"__version": "16.73",
+	"__version": "16.78",
 	"__feedback": "jmanifest@microsoft.com",
 	"type": "object",
 	"options": {
@@ -45,6 +45,29 @@
 			"links": [{
 				"rel": "More information",
 				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#allow-only-corporate-mailboxes-to-be-added"
+			}]
+		},
+		"DisallowedEmailDomains": {
+			"title": "Disallowed Email Domains",
+			"description": "Specify a list of email domains that are not allowed to be added to the Outlook profile (e.g. contoso.com). Subdomains will be automatically filtered (e.g. specifying contoso.com will also block foo.contoso.com).",
+			"propertyOrder": 24,
+			"type": "array",
+			"options": {
+				"infoText": "Key: DisallowedEmailDomains"
+			},
+			"items": {
+				"type": "string",
+				"title": "Email Domain",
+				"options": {
+					"infoText": "Key: DisallowedEmailDomains",
+					"inputAttributes": {
+						"placeholder": "contoso.com"
+					}
+				}
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#block-access-to-mailboxes-from-unauthorized-domains"
 			}]
 		},
 		"DefaultEmailAddressOrDomain": {
@@ -118,6 +141,20 @@
 			"links": [{
 				"rel": "More information",
 				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook"
+			}]
+		},
+		"HideCanAddOtherAccountTypesTipText": {
+			"title": "Hide text about adding non-corporate mailboxes",
+			"description": "Hide text about adding non-corporate mailboxes during the first run experience.",
+			"propertyOrder": 74,
+			"type": "boolean",
+			"default": true,
+			"options": {
+				"infoText": "Key: HideCanAddOtherAccountTypesTipText"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#hide-text-about-adding-non-corporate-mailboxes"
 			}]
 		},
 		"HideFoldersOnMyComputerRootInFolderList": {
@@ -314,6 +351,20 @@
 				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#disable-pride-theme"
 			}]
 		},
+		"HideRetentionPolicyInfobar": {
+			"title": "Disable retention messages",
+			"description": "Hide information about message retention settings when viewing message contents.",
+			"propertyOrder": 204,
+			"type": "boolean",
+			"default": false,
+			"options": {
+				"infoText": "Key: HideRetentionPolicyInfobar"
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-outlook#disable-retention-messages"
+			}]
+		},
 		"DefaultWeatherLocation": {
 			"title": "Default weather location",
 			"description": "Sets the default weather location in the Calendar view. Enter the city and state or country (e.g. Redmond, WA or Paris, France)",
@@ -404,5 +455,5 @@
 			}]
 		}
 	},
-	"defaultProperties": ["EnableNewOutlook", "AllowedEmailDomains", "DefaultEmailAddressOrDomain", "UserPreference_maxCheckListDisplayDurationMet", "UserPreference_MessageList_PromoDismiss_AddAccount", "TrustO365AutodiscoverRedirect", "HideFoldersOnMyComputerRootInFolderList", "DisableImport", "DisableExport", "DisableEncryptOnly", "DisableDoNotForward", "DisableSMIMECompose", "DefaultWeatherLocation", "DisableTeamsMeeting"]
+	"defaultProperties": ["EnableNewOutlook", "AllowedEmailDomains", "DisallowedEmailDomains", "DefaultEmailAddressOrDomain", "UserPreference_maxCheckListDisplayDurationMet", "UserPreference_MessageList_PromoDismiss_AddAccount", "TrustO365AutodiscoverRedirect", "HideCanAddOtherAccountTypesTipText", "HideFoldersOnMyComputerRootInFolderList", "DisableImport", "DisableExport", "DisableEncryptOnly", "DisableDoNotForward", "DisableSMIMECompose", "DefaultWeatherLocation", "DisableTeamsMeeting"]
 }

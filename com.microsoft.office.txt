@@ -1,7 +1,7 @@
 {
 	"title": "com.microsoft.office",
 	"description": "Preference Domain: com.microsoft.office,  Application: Microsoft 365 and Office 2021/2019 Suite",
-	"__version": "16.73",
+	"__version": "16.78",
 	"__feedback": "jmanifest@microsoft.com",
 	"type": "object",
 	"options": {
@@ -270,6 +270,22 @@
 			"links": [{
 				"rel": "More information",
 				"href": "https://learn.microsoft.com/deployoffice/mac/set-preference-macro-security-office-for-mac#disable-visual-basic"
+			}]
+		},
+		"CompatibleEncryption": {
+			"title": "Set cipher algorithm",
+			"description": "Instruct Office applications to use a specific Cipher algorithm for IRM protection, such as Cipher Block Chaining (CBC) or Electronic Codebook (ECB).",
+			"propertyOrder": 194,
+			"type": "integer",
+			"enum": [1, 2],
+			"default": 1,
+			"options": {
+				"infoText": "Key: CompatibleEncryption",
+				"enum_titles": ["Cipher Block Chaining (CBC)", "Electronic Codebook (ECB)"]
+			},
+			"links": [{
+				"rel": "More information",
+				"href": "https://learn.microsoft.com/deployoffice/mac/preferences-office#cipher-algorithm"
 			}]
 		},
 		"InstallWord": {

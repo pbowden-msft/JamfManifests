@@ -1,7 +1,7 @@
 {
 	"title": "com.microsoft.autoupdate2",
 	"description": "Preference Domain: com.microsoft.autoupdate2,  Application: MAU",
-	"__version": "4.61",
+	"__version": "4.64",
 	"__feedback": "jmanifest@microsoft.com",
 	"type": "object",
 	"options": {
@@ -255,7 +255,7 @@
 			"description": "Lock application registration to only the list of apps specified in this profile.",
 			"type": "object",
 			"options": {
-				"collapsed": true,
+				"collapsed": false,
 				"disable_properties": true
 			},
 			"properties": {
@@ -271,6 +271,10 @@
 						"Application ID": {
 							"type": "string",
 							"default": "OLIC02"
+						},
+						"App Domain": {
+							"type": "string",
+							"default": "com.microsoft.office"
 						},
 						"LCID": {
 							"type": "integer",
@@ -329,8 +333,12 @@
 					"title": "Company Portal",
 					"$ref": "#/definitions/application"
 				},
-				"/Applications/Microsoft Teams.app": {
-					"title": "Microsoft Teams",
+				"/Applications/Microsoft Teams classic.app": {
+					"title": "Microsoft Teams classic",
+					"$ref": "#/definitions/application"
+				},
+				"/Applications/Microsoft Teams (work or school).app": {
+					"title": "Microsoft Teams (work or school)",
 					"$ref": "#/definitions/application"
 				},
 				"/Applications/Skype for Business.app": {
@@ -349,27 +357,33 @@
 			"default": {
 				"/Applications/Microsoft Word.app": {
 					"LCID": 1033,
-					"Application ID": "MSWD2019"
+					"Application ID": "MSWD2019",
+					"App Domain": "com.microsoft.office"
 				},
 				"/Applications/Microsoft Excel.app": {
 					"LCID": 1033,
-					"Application ID": "XCEL2019"
+					"Application ID": "XCEL2019",
+					"App Domain": "com.microsoft.office"
 				},
 				"/Applications/Microsoft PowerPoint.app": {
 					"LCID": 1033,
-					"Application ID": "PPT32019"
+					"Application ID": "PPT32019",
+					"App Domain": "com.microsoft.office"
 				},
 				"/Applications/Microsoft Outlook.app": {
 					"LCID": 1033,
-					"Application ID": "OPIM2019"
+					"Application ID": "OPIM2019",
+					"App Domain": "com.microsoft.office"
 				},
 				"/Applications/Microsoft OneNote.app": {
 					"LCID": 1033,
-					"Application ID": "ONMC2019"
+					"Application ID": "ONMC2019",
+					"App Domain": "com.microsoft.office"
 				},
 				"/Library/Application Support/Microsoft/MAU2.0/Microsoft AutoUpdate.app": {
 					"LCID": 1033,
-					"Application ID": "MSau04"
+					"Application ID": "MSau04",
+					"App Domain": "com.microsoft.office"
 				},
 				"/Applications/OneDrive.app": {
 					"LCID": 1033,
@@ -379,9 +393,13 @@
 					"LCID": 1033,
 					"Application ID": "IMCP01"
 				},
-				"/Applications/Microsoft Teams.app": {
+				"/Applications/Microsoft Teams classic.app": {
 					"LCID": 1033,
 					"Application ID": "TEAMS10"
+				},
+				"/Applications/Microsoft Teams (work or school).app": {
+					"LCID": 1033,
+					"Application ID": "TEAMS21"
 				},
 				"/Applications/Skype for Business.app": {
 					"LCID": 1033,
@@ -418,6 +436,13 @@
 						"hidden": true
 					}
 				},
+				"App Domain": {
+					"type": "string",
+					"required": false,
+					"options": {
+						"hidden": true
+					}
+				},
 				"LCID": {
 					"type": "integer",
 					"required": true,
@@ -431,11 +456,11 @@
 					"propertyOrder": 10,
 					"type": "string",
 					"required": false,
-					"enum": ["Current", "Preview", "Beta", "Custom"],
+					"enum": ["Current", "Preview", "Beta"],
 					"default": "",
 					"options": {
 						"infoText": "Key: ChannelName",
-						"enum_titles": ["Current Channel", "Current Channel (Preview)", "Beta Channel", "Custom"]
+						"enum_titles": ["Current Channel", "Current Channel (Preview)", "Beta Channel"]
 					}
 				},
 				"ManifestServer": {
